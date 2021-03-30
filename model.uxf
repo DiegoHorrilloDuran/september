@@ -296,4 +296,23 @@ m2=*
 has v</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
   </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>189</x>
+      <y>371</y>
+      <w>217</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Task
+--
++title: String{NotEmpty, Size(Max 79)}
++start: Date{NotNull, Future}
++end: Date{NotNull, Future}
++workload: Double{NotNull}
++description: String{NotEmpty, Size(Max 499)}
++privacy: Boolean{NotNull}</panel_attributes>
+    <additional_attributes/>
+  </element>
 </diagram>
