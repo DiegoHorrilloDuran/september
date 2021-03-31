@@ -19,4 +19,25 @@
 
 	<import resource="classpath:/WEB-INF/population/conversion-service.xml"/>	
 
+
+<!-- Tasks -->
+
+<bean id="task01" class="acme.framework.entities.Task">
+	<property name="title" value="Tarea 1"/>
+	<property name="start" value="2021/04/12 15:00"/>
+	<property name="end"   value="2021/04/12 17:00"/>
+	<property name="workload" value="2.0"/>
+	<property name="description" value="Esto es una tarea"/>
+	<property name="privacy" value="true"/>
+</bean>
+
+<bean id="task02" class="acme.framework.entities.Task">
+	<property name="title" value="Tarea 2"/>
+	<property name="start" value="2021/04/15 15:00"/>
+	<property name="end"   value="2021/04/17 18:00"/>
+	<property name="workload" value="8.0"/>
+	<property name="description" value="Esto es otra tarea"/>
+	<property name="privacy" value="false"/>
+</bean>
+
 </beans>
