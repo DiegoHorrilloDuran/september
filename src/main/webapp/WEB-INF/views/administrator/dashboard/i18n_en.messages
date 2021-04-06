@@ -8,7 +8,16 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-administrator.dashboard.form.label.numberOfTasks = Total number of tasks: 
 administrator.dashboard.form.label.numberOfPrivateTasks = Number of private tasks: 
-administrator.dashboard.form.label.numberOfFinishedTasks = Number of finished tasks: 
+administrator.dashboard.form.label.numberOfPublicTasks = Number of public tasks: 
+administrator.dashboard.form.label.numberOfFinishedTasks = Number of finished tasks:
+administrator.dashboard.form.label.numberOfUnfinishedTasks = Number of non-finished tasks: 
+administrator.dashboard.form.label.maxTaskExecutionPeriod = Max task execution period: 
+administrator.dashboard.form.label.minTaskExecutionPeriod = Min task execution period: 
+administrator.dashboard.form.label.avgTaskExecutionPeriods = Average task execution periods: 
+administrator.dashboard.form.label.stdDevTaskExecutionPeriods = Deviation task execution periods: 
+administrator.dashboard.form.label.maxTaskWorkload = Max task workload: 
+administrator.dashboard.form.label.minTaskWorkload = Min task workload: 
+administrator.dashboard.form.label.avgTaskWorkloads = Average task workloads: 
+administrator.dashboard.form.label.stdDevTaskWorkloads = Deviation task workloads: 
 administrator.dashboard.form.button.return = Return

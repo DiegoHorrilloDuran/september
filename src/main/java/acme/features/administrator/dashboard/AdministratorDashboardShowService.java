@@ -28,21 +28,29 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "numberOfTasks", "numberOfPrivateTasks", "numberOfFinishedTasks");
+		final Integer pt = entity.numberOfPublicTasks();
+		final Integer ut = entity.numberOfUnfinishedTasks();
 		
+		request.unbind(entity, model, "numberOfTasks", "numberOfPrivateTasks", "numberOfFinishedTasks","maxTaskExecutionPeriod","minTaskExecutionPeriod","avgTaskExecutionPeriods","stdDevTaskExecutionPeriods","maxTaskWorkload","minTaskWorkload","avgTaskWorkloads","stdDevTaskWorkloads");
+		model.setAttribute("numberOfPublicTasks", pt);
+		model.setAttribute("numberOfUnfinishedTasks", ut);
 	}
 
 	@Override
 	public Dashboard findOne(final Request<Dashboard> request) {
 		final Dashboard dashboard = new Dashboard();
 		
-		final Integer numberOfTasks = this.repository.getNumberOfTasks();
-		final Integer numberOfPrivateTasks = this.repository.getNumberOfPrivateTasks();
-		final Integer numberOfFinishedTasks = this.repository.getNumberOfFinishedTasks();
-		
-		dashboard.setNumberOfTasks(numberOfTasks);
-		dashboard.setNumberOfPrivateTasks(numberOfPrivateTasks);
-		dashboard.setNumberOfFinishedTasks(numberOfFinishedTasks);
+		dashboard.setNumberOfTasks(this.repository.getNumberOfTasks());
+		dashboard.setNumberOfPrivateTasks(this.repository.getNumberOfPrivateTasks());
+		dashboard.setNumberOfFinishedTasks(this.repository.getNumberOfFinishedTasks());
+		dashboard.setMaxTaskExecutionPeriod(this.repository.getMaxTaskExecutionPeriod());
+		dashboard.setMinTaskExecutionPeriod(this.repository.getMinTaskExecutionPeriod());
+		dashboard.setAvgTaskExecutionPeriods(this.repository.getAvgTaskExecutionPeriods());
+		dashboard.setStdDevTaskExecutionPeriods(this.repository.getStdDevTaskExecutionPeriods());
+		dashboard.setMaxTaskWorkload(this.repository.getMaxTaskWorkload());
+		dashboard.setMinTaskWorkload(this.repository.getMinTaskWorkload());
+		dashboard.setAvgTaskWorkloads(this.repository.getAvgTaskWorkloads());
+		dashboard.setStdDevTaskWorkloads(this.repository.getStdDevTaskWorkloads());
 		
 		return dashboard;
 	}
