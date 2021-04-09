@@ -29,13 +29,14 @@ public class Shout extends DomainEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
 	@NotNull
-	@Size(min=5,max=25)
 	protected Date				moment;
 
 	@NotBlank
+	@Size(min=5,max=25)
 	protected String			author;
 
 	@NotBlank
+	@Size(max=100)
 	protected String			text;
 	
 	@URL
