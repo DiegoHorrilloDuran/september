@@ -17,6 +17,6 @@ authenticated.task.form.label.start = Comienzo:
 authenticated.task.form.label.end = Final:
 authenticated.task.form.label.workload = Carga de trabajo:
 authenticated.task.form.label.description = Descripción:
-authenticated.task.form.label.privacy = Privacidad:
+authenticated.task.form.label.privacy = Privado
 
 authenticated.task.form.button.return = Volver
