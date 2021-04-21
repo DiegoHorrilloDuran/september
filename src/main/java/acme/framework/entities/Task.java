@@ -12,7 +12,10 @@ import javax.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
+
+
 @Entity
+
 @Getter
 @Setter
 public class Task extends DomainEntity {
