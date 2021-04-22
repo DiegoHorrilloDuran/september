@@ -1,5 +1,7 @@
 package acme.features.administrator.customisationParameter;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -7,19 +9,18 @@ import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Administrator;
 import acme.framework.entities.CustomisationParameter;
-import acme.framework.services.AbstractShowService;
+import acme.framework.services.AbstractListService;
 
 @Service
-public class AdministratorCustomisationParameterShowService implements AbstractShowService<Administrator, CustomisationParameter> {
-
+public class AdministratorCustomisationParameterListService implements AbstractListService<Administrator, CustomisationParameter>{
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
 	protected AdministratorCustomisationParameterRepository repository;
 
-	// AbstractShowService<Administrator, CustomisationParameter> interface --------------
-	
+	// AbstractListService<Administrator, UserAccount> interface --------------
+		
 	@Override
 	public boolean authorise(final Request<CustomisationParameter> request) {
 		assert request != null;
@@ -38,18 +39,14 @@ public class AdministratorCustomisationParameterShowService implements AbstractS
 	}
 
 	@Override
-	public CustomisationParameter findOne(final Request<CustomisationParameter> request) {
+	public Collection<CustomisationParameter> findMany(final Request<CustomisationParameter> request) {
 		assert request != null;
 
-		CustomisationParameter result;
-		int id;
-		
-		id = request.getModel().getInteger("id");
-		result = this.repository.findOneById(id);
+		Collection<CustomisationParameter> result;
+
+		result = this.repository.findMany();
 
 		return result;
 	}
-	
-	
 
 }

@@ -1,7 +1,5 @@
 package acme.features.administrator.customisationParameter;
 
-import java.util.stream.Collectors;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -52,8 +50,10 @@ public class AdministratorCustomisationParameterUpdateService implements Abstrac
 		assert request != null;
 
 		CustomisationParameter result;
-
-		result = this.repository.findSpam().stream().collect(Collectors.toList()).get(0);
+		int id;
+		
+		id = request.getModel().getInteger("id");
+		result = this.repository.findOneById(id);
 
 		return result;
 	}

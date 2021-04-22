@@ -8,17 +8,12 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-administrator.customisation-parameter.form.title.show = Customisation Parameter
-administrator.customisation-parameter.form.title.update = Customisation Parameter
-
 administrator.customisation-parameter.form.label.spamwords = Spam Words:
 administrator.customisation-parameter.form.label.threshold = Threshold:
+administrator.customisation-parameter.list.label.spamwords = Spam Words
+administrator.customisation-parameter.list.label.threshold = Threshold
 
 administrator.customisation-parameter.form.button.update = Update
 administrator.customisation-parameter.form.button.return = Return
 
 administrator.customisation-parameter.list.title = Listing of customisation parameters
-
-administrator.customisation-parameter.list.label.username = Username
-administrator.customisation-parameter.list.label.name = Name
-administrator.customisation-parameter.list.label.surname = Surname
