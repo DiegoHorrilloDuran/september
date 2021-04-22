@@ -9,3 +9,6 @@ anonymous.shout.form.label.text = Text
 anonymous.shout.form.label.info = Information
 anonymous.shout.form.button.create = Shout!
 anonymous.shout.form.button.return = Return
+
+#Spam
+anonymous.shout.error.spam = Text detected as Spam
