@@ -43,6 +43,13 @@ master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shutdown = Shut down
 
+
+# master.menu.authenticated ########################################################
+
+master.menu.authenticated = Authenticated
+master.menu.authenticated.task = Public tasks
+
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Provider
