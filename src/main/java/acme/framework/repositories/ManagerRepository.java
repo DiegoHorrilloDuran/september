@@ -10,7 +10,7 @@ import acme.framework.entities.Manager;
 @Repository
 public interface ManagerRepository extends AbstractRepository {
 
-	@Query("select m from Manager m where m.privacy = true")
+	@Query("select m from Manager m ")
 	Collection<Manager> findMany();
 	
 	@Query("select m from Manager m where m.id = ?1")
