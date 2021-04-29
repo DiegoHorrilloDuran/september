@@ -1,8 +1,6 @@
 package acme.features.anonymous.shout;
 
-import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +12,7 @@ import acme.framework.entities.Anonymous;
 import acme.framework.entities.CustomisationParameter;
 import acme.framework.entities.Shout;
 import acme.framework.services.AbstractCreateService;
+import acme.framework.utilities.SpamDetect;
 
 @Service
 public class AnonymousShoutCreateService implements AbstractCreateService<Anonymous, Shout> {
@@ -69,51 +68,18 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
         assert request != null;
         assert entity != null;
         assert errors != null;
+        
+        final CustomisationParameter params = this.repository.findSpam().get(0);
 
         if (!errors.hasErrors("author")) {
-            errors.state(request, !this.isSpamText(entity.getAuthor()), "author", "anonymous.shout.error.spam");
+            errors.state(request, !SpamDetect.isSpamText(entity.getAuthor(),params), "author", "anonymous.shout.error.spam");
         }
 
         if (!errors.hasErrors("text")) {
-            errors.state(request, !this.isSpamText(entity.getText()), "text", "anonymous.shout.error.spam");
+            errors.state(request, SpamDetect.isSpamText(entity.getText(), params), "text", "anonymous.shout.error.spam");
         }
 
     }
-
-    private boolean isSpamText(final String textToCheck) {
-        boolean result = false;
-        Double numSpWordsInText = 0.;
-        final Integer numOfWords = textToCheck.split(" ").length;
-        final List<CustomisationParameter> customisation = this.repository.findSpam();
-
-        final String spamWords = customisation.get(0).getSpamWords();
-        final String[] spamWordsArray = spamWords.split(",");
-        final List<String> spamWordsList = Arrays.asList(spamWordsArray);
-
-        for (final String sw : spamWordsList) {
-            numSpWordsInText = numSpWordsInText + this.timesAppearSpamWord(textToCheck.toLowerCase(), sw.toLowerCase(), 0.0);
-            final Double percentage = numSpWordsInText / numOfWords * 100;
-
-            if (percentage > customisation.get(0).getThreshold()) {
-                result = true;
-                break;
-            }
-
-        }
-
-        return result;
-    }
-
-	private double timesAppearSpamWord(final String textToCheck, final String spamWord, Double numSpWord) {
-	        if (textToCheck.contains(spamWord)) {
-	            final Integer index = textToCheck.indexOf(spamWord) + spamWord.length();
-	            numSpWord++;
-	            
-	            return this.timesAppearSpamWord(textToCheck.substring(index).trim(), spamWord, numSpWord);
-	        }
-	
-	        return numSpWord;
-	    }
 
 	@Override
 	public void create(final Request<Shout> request, final Shout entity) {
