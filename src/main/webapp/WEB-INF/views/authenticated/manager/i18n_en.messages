@@ -8,12 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+authenticated.manager.form.title.create = Are you sure?
 
-manager.list.label.id = ID
-
-manager.form.label.id = ID:
-
-
-manager.form.button.return = Return
-
-
+authenticated.manager.form.button.create = Accept
+authenticated.manager.form.button.return = Cancel

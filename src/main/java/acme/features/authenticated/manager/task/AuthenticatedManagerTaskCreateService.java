@@ -1,8 +1,6 @@
-package acme.features.anonymous.shout;
+package acme.features.authenticated.manager.task;
 
-import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,25 +8,25 @@ import org.springframework.stereotype.Service;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Anonymous;
-import acme.framework.entities.CustomisationParameter;
-import acme.framework.entities.Shout;
+import acme.framework.entities.Authenticated;
+import acme.framework.entities.Manager;
+import acme.framework.entities.Task;
 import acme.framework.services.AbstractCreateService;
 
 @Service
-public class AnonymousShoutCreateService implements AbstractCreateService<Anonymous, Shout> {
+public class AuthenticatedManagerTaskCreateService implements AbstractCreateService<Authenticated, Task> {
 
 	@Autowired
-	protected AnonymousShoutRepository repository;
+	protected  AuthenticatedManagerTaskRepository repository;
 	
 	@Override
-	public boolean authorise(final Request<Shout> request) {
+	public boolean authorise(final Request<Task> request) {
 		assert request != null;
 		return true;
 	}
 
 	@Override
-	public void bind(final Request<Shout> request, final Shout entity, final Errors errors) {
+	public void bind(final Request<Task> request, final Task entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -38,44 +36,50 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 	}
 
 	@Override
-	public void unbind(final Request<Shout> request, final Shout entity, final Model model) {
+	public void unbind(final Request<Task> request, final Task entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "author", "text", "info");
+		request.unbind(entity, model, "title", "start", "end", "workload", "description", "privacy", "manager");
 	}
 
 	@Override
-	public Shout instantiate(final Request<Shout> request) {
+	public Task instantiate(final Request<Task> request) {
 		assert request != null;
 		
-		Shout result;
-		Date moment;
-
-		moment = new Date(System.currentTimeMillis()-1);
+		Task result;
+		Date start;
+		Date end;
+		Manager manager;
 		
-		result = new Shout();
-		result.setAuthor("");
-		result.setText("");
-		result.setMoment(moment);
-		result.setInfo("");
+		manager = new Manager();
+		start = new Date(System.currentTimeMillis()-1);
+		end = new Date(System.currentTimeMillis()-1);
+		
+		result = new Task();
+		result.setTitle("");
+		result.setStart(start);
+		result.setEnd(end);
+		result.setWorkload(0.0);
+		result.setDescription("");
+		result.setManager(manager);
 		
 		return result;
 	}
-
+/*
 	@Override
-	public void validate(final Request<Shout> request, final Shout entity, final Errors errors) {
+	public void validate(final Request<Task> request, final Task entity, final Errors errors) {
         assert request != null;
         assert entity != null;
         assert errors != null;
 
-        if (!errors.hasErrors("author")) {
-            errors.state(request, !this.isSpamText(entity.getAuthor()), "author", "anonymous.shout.error.spam");
+        if (!errors.hasErrors("title")) {
+            errors.state(request, !this.isSpamText(entity.getTitle()), "title", "authenticated.task.error.spam");
         }
 
-        if (!errors.hasErrors("text")) {
-            errors.state(request, !this.isSpamText(entity.getText()), "text", "anonymous.shout.error.spam");
+        if (!errors.hasErrors("description")) {
+            errors.state(request, !this.isSpamText(entity.getDescription()), "description", "authenticated.task.error.spam");
         }
 
     }
@@ -114,17 +118,20 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 	
 	        return numSpWord;
 	    }
-
+*/
 	@Override
-	public void create(final Request<Shout> request, final Shout entity) {
+	public void create(final Request<Task> request, final Task entity) {
 		assert request != null;
 		assert entity != null;
 		
-		Date moment;
 		
-		moment = new Date(System.currentTimeMillis()-1);
-		entity.setMoment(moment);
 		this.repository.save(entity);
 	}
+
+@Override
+public void validate(final Request<Task> request, final Task entity, final Errors errors) {
+	// TODO Auto-generated method stub
+	
+}
 	
 }

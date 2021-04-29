@@ -17,6 +17,9 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="manager.list.label.id" path="id" width="20%"/>
-		
+	<acme:list-column code="authenticated.task.list.label.title" path="title" width="20%"/>
+	<acme:list-column code="authenticated.task.list.label.start" path="start" width="40%"/>
+	<acme:list-column code="authenticated.task.list.label.end" path="end" width="40%"/>		
 </acme:list>
+
+

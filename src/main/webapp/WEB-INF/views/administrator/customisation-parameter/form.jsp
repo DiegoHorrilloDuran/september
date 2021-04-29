@@ -16,8 +16,10 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-textbox code="manager.form.label.id" path="id"/>
-
+	<acme:form-textbox code="administrator.customisation-parameter.form.label.spamwords" path="spamWords"/>
+	<acme:form-textbox code="administrator.customisation-parameter.form.label.threshold" path="threshold"/>
 	
-	<acme:form-return code="manager.form.button.return"/>
+	<acme:form-submit code="administrator.customisation-parameter.form.button.update" action="/administrator/customisation-parameter/update"/>
+		
+  	<acme:form-return code="administrator.customisation-parameter.form.button.return"/>
 </acme:form>

@@ -48,5 +48,7 @@ public class Task extends DomainEntity {
 	 @NotNull
 	 protected Boolean 	privacy;
 	 
+	 protected Manager manager;
+	 
 
 }
