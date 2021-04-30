@@ -44,8 +44,10 @@ public class AuthenticatedManagerTaskListService implements AbstractListService<
 		assert request != null;
 		
 		final Collection<Task> res;
+		Integer manager;
 		
-		res = this.repository.findTaskByManagerId();
+		manager = request.getPrincipal().getAccountId();
+		res = this.repository.findTaskByManagerId(manager);  //.stream().filter(x-> x.getIdmanager().equals(manager));
 		
 		return res;
 	}

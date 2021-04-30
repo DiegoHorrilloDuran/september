@@ -12,12 +12,12 @@ authenticated.manager.task.list.label.title = Title
 authenticated.manager.task.list.label.start = Start
 authenticated.manager.task.list.label.end = End
 
-authenticated.manager.task.form.label.title = Title:
-authenticated.manager.task.form.label.start = Start:
-authenticated.manager.task.form.label.end = End:
-authenticated.manager.task.form.label.workload = Workload:
-authenticated.manager.task.form.label.description = Description:
-authenticated.manager.task.form.label.privacy = Private
-authenticated.manager.task.form.label.manager = Manager
+authenticated.manager.task.create.label.title = Title:
+authenticated.manager.task.create.label.start = Start:
+authenticated.manager.task.create.label.end = End:
+authenticated.manager.task.create.label.workload = Workload:
+authenticated.manager.task.create.label.description = Description:
+authenticated.manager.task.create.label.privacy = Private
 
+authenticated.manager.task.form.button.create = Create
 authenticated.manager.task.form.button.return = Return

@@ -141,6 +141,16 @@
 	<property name="privacy" value="false"/>
 </bean>
 
+<bean id="task08" class="acme.framework.entities.Task">
+	<property name="title" value="Tarea Manager"/>
+	<property name="start" value="2021/03/11 15:00"/>
+	<property name="end"   value="2021/03/15 18:00"/>
+	<property name="workload" value="8.0"/>
+	<property name="description" value="Esto es otra tarea"/>
+	<property name="privacy" value="true"/>
+	<property name="idmanager" value="7"/>
+</bean>
+
 <!-- Shouts -->
 
 <bean id="shout01" class="acme.framework.entities.Shout">

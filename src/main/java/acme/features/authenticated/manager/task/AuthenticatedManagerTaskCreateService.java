@@ -9,7 +9,6 @@ import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
-import acme.framework.entities.Manager;
 import acme.framework.entities.Task;
 import acme.framework.services.AbstractCreateService;
 
@@ -41,7 +40,7 @@ public class AuthenticatedManagerTaskCreateService implements AbstractCreateServ
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "title", "start", "end", "workload", "description", "privacy", "manager");
+		request.unbind(entity, model, "title", "start", "end", "workload", "description", "privacy", "idmanager");
 	}
 
 	@Override
@@ -51,9 +50,9 @@ public class AuthenticatedManagerTaskCreateService implements AbstractCreateServ
 		Task result;
 		Date start;
 		Date end;
-		Manager manager;
+		Integer manager;
 		
-		manager = new Manager();
+		manager = request.getPrincipal().getAccountId();
 		start = new Date(System.currentTimeMillis()-1);
 		end = new Date(System.currentTimeMillis()-1);
 		
@@ -63,27 +62,28 @@ public class AuthenticatedManagerTaskCreateService implements AbstractCreateServ
 		result.setEnd(end);
 		result.setWorkload(0.0);
 		result.setDescription("");
-		result.setManager(manager);
+		result.setIdmanager(manager);
 		
 		return result;
 	}
-/*
+
 	@Override
 	public void validate(final Request<Task> request, final Task entity, final Errors errors) {
         assert request != null;
         assert entity != null;
         assert errors != null;
 
-        if (!errors.hasErrors("title")) {
+      /*  if (!errors.hasErrors("title")) {
             errors.state(request, !this.isSpamText(entity.getTitle()), "title", "authenticated.task.error.spam");
         }
 
         if (!errors.hasErrors("description")) {
             errors.state(request, !this.isSpamText(entity.getDescription()), "description", "authenticated.task.error.spam");
-        }
+        }*/
 
     }
 
+	/*
     private boolean isSpamText(final String textToCheck) {
         boolean result = false;
         Double numSpWordsInText = 0.;
@@ -128,10 +128,6 @@ public class AuthenticatedManagerTaskCreateService implements AbstractCreateServ
 		this.repository.save(entity);
 	}
 
-@Override
-public void validate(final Request<Task> request, final Task entity, final Errors errors) {
-	// TODO Auto-generated method stub
-	
-}
+
 	
 }

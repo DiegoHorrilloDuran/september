@@ -16,13 +16,13 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-textbox code="authenticated.manager.task.form.label.title" path="title"/>
-	<acme:form-textbox code="authenticated.manager.task.form.label.start" path="start"/>
-	<acme:form-textbox code="authenticated.manager.task.form.label.end" path="end"/>
-	<acme:form-textbox code="authenticated.manager.task.form.label.workload" path="workload"/>
-	<acme:form-textarea code="authenticated.manager.task.form.label.description" path="description"/>
-	<acme:form-checkbox code="authenticated.manager.task.form.label.privacy" path="privacy"/>
-	<acme:form-textarea code="authenticated.manager.task.form.label.manager" path="manager"/>
+	<acme:form-textbox code="authenticated.manager.task.create.label.title" path="title"/>
+	<acme:form-textbox code="authenticated.manager.task.create.label.start" path="start"/>
+	<acme:form-textbox code="authenticated.manager.task.create.label.end" path="end"/>
+	<acme:form-textbox code="authenticated.manager.task.create.label.workload" path="workload"/>
+	<acme:form-textarea code="authenticated.manager.task.create.label.description" path="description"/>
+	<acme:form-checkbox code="authenticated.manager.task.create.label.privacy" path="privacy"/>
 	
+	<acme:form-submit code="authenticated.manager.task.form.button.create" action="/authenticated/manager/task/create"/>
 	<acme:form-return code="authenticated.manager.task.form.button.return"/>
 </acme:form>
