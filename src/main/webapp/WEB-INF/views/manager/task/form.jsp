@@ -23,6 +23,6 @@
 	<acme:form-textarea code="authenticated.manager.task.create.label.description" path="description"/>
 	<acme:form-checkbox code="authenticated.manager.task.create.label.privacy" path="privacy"/>
 	
-	<acme:form-submit code="authenticated.manager.task.form.button.create" action="/authenticated/manager/task/create"/>
+	<acme:form-submit test="${command == 'create'}" code="authenticated.manager.task.form.button.create" action="/authenticated/manager/task/create"/>
 	<acme:form-return code="authenticated.manager.task.form.button.return"/>
 </acme:form>

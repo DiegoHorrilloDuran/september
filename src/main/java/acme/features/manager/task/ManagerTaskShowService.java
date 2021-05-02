@@ -1,26 +1,22 @@
-package acme.features.authenticated.manager.task;
-
-
-import java.util.Collection;
+package acme.features.manager.task;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Authenticated;
+import acme.framework.entities.Manager;
 import acme.framework.entities.Task;
-import acme.framework.services.AbstractListService;
+import acme.framework.services.AbstractShowService;
 
 @Service
-public class AuthenticatedManagerTaskListService implements AbstractListService<Authenticated, Task>{
-
-
+public class ManagerTaskShowService implements AbstractShowService<Manager, Task>{
+	
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuthenticatedManagerTaskRepository repository;
-		
+	protected ManagerTaskRepository repository;
+
 	@Override
 	public boolean authorise(final Request<Task> request) {
 		assert request != null;
@@ -28,29 +24,29 @@ public class AuthenticatedManagerTaskListService implements AbstractListService<
 		return true;
 	}
 
-
 	@Override
 	public void unbind(final Request<Task> request, final Task entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "start", "end");
+		request.unbind(entity, model, "title", "start", "end", "workload", "description", "privacy");
 		
 	}
 
 	@Override
-	public Collection<Task> findMany(final Request<Task> request) {
+	public Task findOne(final Request<Task> request) {
 		assert request != null;
 		
-		final Collection<Task> res;
-		Integer manager;
+		final Task res;
 		
-		manager = request.getPrincipal().getAccountId();
-		res = this.repository.findTaskByManagerId(manager);  //.stream().filter(x-> x.getIdmanager().equals(manager));
+		int id;
+		
+		id = request.getModel().getInteger("id");
+		
+		res = this.repository.findOneTaskById(id);
 		
 		return res;
 	}
-
 
 }

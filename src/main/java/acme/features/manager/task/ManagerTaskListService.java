@@ -1,22 +1,26 @@
-package acme.features.authenticated.manager.task;
+package acme.features.manager.task;
+
+
+import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Authenticated;
+import acme.framework.entities.Manager;
 import acme.framework.entities.Task;
-import acme.framework.services.AbstractShowService;
+import acme.framework.services.AbstractListService;
 
 @Service
-public class AuthenticatedManagerTaskShowService implements AbstractShowService<Authenticated, Task>{
-	
+public class ManagerTaskListService implements AbstractListService<Manager, Task>{
+
+
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuthenticatedManagerTaskRepository repository;
-
+	protected ManagerTaskRepository repository;
+		
 	@Override
 	public boolean authorise(final Request<Task> request) {
 		assert request != null;
@@ -24,29 +28,29 @@ public class AuthenticatedManagerTaskShowService implements AbstractShowService<
 		return true;
 	}
 
+
 	@Override
 	public void unbind(final Request<Task> request, final Task entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "start", "end", "workload", "description", "privacy");
+		request.unbind(entity, model, "title", "start", "end");
 		
 	}
 
 	@Override
-	public Task findOne(final Request<Task> request) {
+	public Collection<Task> findMany(final Request<Task> request) {
 		assert request != null;
 		
-		final Task res;
+		final Collection<Task> res;
+		Integer manager;
 		
-		int id;
-		
-		id = request.getModel().getInteger("id");
-		
-		res = this.repository.findOneTaskById(id);
+		manager = request.getPrincipal().getAccountId();
+		res = this.repository.findTaskByManagerId(manager);  //.stream().filter(x-> x.getIdmanager().equals(manager));
 		
 		return res;
 	}
+
 
 }

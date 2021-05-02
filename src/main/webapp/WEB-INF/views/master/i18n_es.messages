@@ -49,11 +49,11 @@ master.menu.administrator.shutdown = Parar el sistema
 master.menu.authenticated = Autenticado
 master.menu.authenticated.task = Tareas públicas
 
-# master.menu.authenticated.manager ########################################################
+# master.menu.manager ########################################################
 
-master.menu.authenticated.manager = Manager
-master.menu.authenticated.manager.task.list = Tareas del manager
-master.menu.authenticated.manager.task.create = Crear tarea
+master.menu.manager = Manager
+master.menu.manager.task.list = Tareas del manager
+master.menu.manager.task.create = Crear tarea
 
 # master.menu.provider ########################################################
 

@@ -1,4 +1,4 @@
-package acme.features.authenticated.manager.task;
+package acme.features.manager.task;
 
 import java.util.Collection;
 
@@ -9,7 +9,7 @@ import acme.framework.entities.Task;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface AuthenticatedManagerTaskRepository extends AbstractRepository {
+public interface ManagerTaskRepository extends AbstractRepository {
 
 	@Query("select t from Task t where t.idmanager = ?1 order by t.start, t.end, t.workload")
 	Collection<Task> findTaskByManagerId(Integer id);
