@@ -2,6 +2,7 @@ package acme.features.manager.task;
 
 
 
+import java.time.Instant;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,7 +67,11 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		
+        final Date ahora = Date.from(Instant.now());
+        
+        
+        
+      errors.state(request, !entity.getStart().before(ahora), "start", "La fecha de inicio no puede ser anterior a la actual");
 		errors.state(request, entity.getStart().before(entity.getEnd()), "end", "La fecha de fin no puede ser anterior a la de inicio");
 		
 	}

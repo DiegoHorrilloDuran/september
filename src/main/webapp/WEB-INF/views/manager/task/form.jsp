@@ -20,8 +20,8 @@
 <jstl:if test="${command=='create' }">
 	<acme:form>
 	<acme:form-textbox code="authenticated.manager.task.create.label.title" path="title"/>
-	<acme:form-textbox code="authenticated.manager.task.create.label.start" path="start"/>
-	<acme:form-textbox code="authenticated.manager.task.create.label.end" path="end"/>
+	<acme:form-textbox code="authenticated.manager.task.create.label.start" path="start" placeholder="yyyy/mm/dd hh:mm"/>
+	<acme:form-textbox code="authenticated.manager.task.create.label.end" path="end" placeholder="yyyy/mm/dd hh:mm"/>
 	<acme:form-textbox code="authenticated.manager.task.create.label.workload" path="workload"/>
 	<acme:form-textarea code="authenticated.manager.task.create.label.description" path="description"/>
 	<acme:form-checkbox code="authenticated.manager.task.create.label.privacy" path="privacy"/>
