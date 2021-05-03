@@ -12,6 +12,9 @@ authenticated.manager.task.list.label.title = Título
 authenticated.manager.task.list.label.start = Comienzo
 authenticated.manager.task.list.label.end = Final
 
+authenticated.manager.task.list.button.delete = Eliminar
+authenticated.manager.task.list.button.update = Editar
+
 authenticated.manager.task.form.label.title = Título:
 authenticated.manager.task.form.label.start = Comienzo:
 authenticated.manager.task.form.label.end = Final:

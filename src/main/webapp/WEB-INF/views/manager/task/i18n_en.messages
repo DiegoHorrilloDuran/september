@@ -12,6 +12,9 @@ authenticated.manager.task.list.label.title = Title
 authenticated.manager.task.list.label.start = Start
 authenticated.manager.task.list.label.end = End
 
+authenticated.manager.task.list.button.delete = Delete
+authenticated.manager.task.list.button.update = Update
+
 authenticated.manager.task.create.label.title = Title:
 authenticated.manager.task.create.label.start = Start:
 authenticated.manager.task.create.label.end = End:

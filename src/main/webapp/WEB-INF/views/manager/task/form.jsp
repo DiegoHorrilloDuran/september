@@ -15,7 +15,23 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<acme:form>
+
+
+<jstl:if test="${command=='create' }">
+	<acme:form>
+	<acme:form-textbox code="authenticated.manager.task.create.label.title" path="title"/>
+	<acme:form-textbox code="authenticated.manager.task.create.label.start" path="start"/>
+	<acme:form-textbox code="authenticated.manager.task.create.label.end" path="end"/>
+	<acme:form-textbox code="authenticated.manager.task.create.label.workload" path="workload"/>
+	<acme:form-textarea code="authenticated.manager.task.create.label.description" path="description"/>
+	<acme:form-checkbox code="authenticated.manager.task.create.label.privacy" path="privacy"/>
+			
+	<acme:form-submit test="${command == 'create'}" code="authenticated.manager.task.form.button.create" action="/manager/task/create"/>
+	<acme:form-return code="authenticated.manager.task.form.button.return"/>
+	</acme:form>
+</jstl:if>
+<jstl:if test="${command=='show' }">
+	<acme:form>
 	<acme:form-textbox code="authenticated.manager.task.create.label.title" path="title"/>
 	<acme:form-textbox code="authenticated.manager.task.create.label.start" path="start"/>
 	<acme:form-textbox code="authenticated.manager.task.create.label.end" path="end"/>
@@ -23,6 +39,10 @@
 	<acme:form-textarea code="authenticated.manager.task.create.label.description" path="description"/>
 	<acme:form-checkbox code="authenticated.manager.task.create.label.privacy" path="privacy"/>
 	
-	<acme:form-submit test="${command == 'create'}" code="authenticated.manager.task.form.button.create" action="/authenticated/manager/task/create"/>
-	<acme:form-return code="authenticated.manager.task.form.button.return"/>
-</acme:form>
+     	<acme:form-submit code="authenticated.manager.task.list.button.delete" action="/manager/task/delete"/>
+     	<acme:form-submit code="authenticated.manager.task.list.button.update" action="/manager/task/update"/>
+		<acme:form-return code="authenticated.manager.task.form.button.return"/>
+	</acme:form>
+</jstl:if>
+
+
