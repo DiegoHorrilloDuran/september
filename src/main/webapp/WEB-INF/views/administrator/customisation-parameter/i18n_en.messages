@@ -17,3 +17,5 @@ administrator.customisation-parameter.form.button.update = Update
 administrator.customisation-parameter.form.button.return = Return
 
 administrator.customisation-parameter.list.title = Listing of customisation parameters
+
+administrator.customisation-parameter.error.threshold = Invalid percentaje
