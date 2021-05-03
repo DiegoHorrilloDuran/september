@@ -61,6 +61,12 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
         assert request != null;
         assert entity != null;
         assert errors != null;
+     
+      errors.state(request, entity.getStart().before(entity.getEnd()), "end", "La fecha de fin no puede ser anterior a la de inicio");  
+        
+        
+     
+      
 
       /*  if (!errors.hasErrors("title")) {
             errors.state(request, !this.isSpamText(entity.getTitle()), "title", "authenticated.task.error.spam");
