@@ -116,7 +116,7 @@ bg=yellow</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>770</x>
-      <y>217</y>
+      <y>175</y>
       <w>70</w>
       <h>42</h>
     </coordinates>
@@ -153,12 +153,12 @@ bg=yellow</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>686</x>
-      <y>182</y>
+      <y>175</y>
       <w>98</w>
-      <h>56</h>
+      <h>28</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;120.0;60.0</additional_attributes>
+    <additional_attributes>10.0;20.0;120.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -299,27 +299,27 @@ has v</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>196</x>
-      <y>350</y>
+      <x>672</x>
+      <y>329</y>
       <w>217</w>
       <h>119</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Task
 --
-+title: String{NotEmpty, Size(Max 79)}
-+start: Date{NotNull, Future}
-+end: Date{NotNull, Future}
++title: String{NotEmpty, Lenght(Max 79)}
++start: Date{NotNull}
++end: Date{NotNull}
 +workload: Double{NotNull}
-+description: String{NotEmpty, Size(Max 499)}
++description: String{NotEmpty, Lenght(Max 499)}
 +privacy: Boolean{NotNull}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>497</x>
-      <y>343</y>
+      <x>343</x>
+      <y>329</y>
       <w>252</w>
       <h>77</h>
     </coordinates>
@@ -336,7 +336,7 @@ Shout
     <id>UMLClass</id>
     <coordinates>
       <x>770</x>
-      <y>175</y>
+      <y>217</y>
       <w>70</w>
       <h>42</h>
     </coordinates>
@@ -353,9 +353,44 @@ bg=yellow</panel_attributes>
       <x>686</x>
       <y>182</y>
       <w>98</w>
-      <h>28</h>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;120.0;20.0</additional_attributes>
+    <additional_attributes>10.0;10.0;120.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>784</x>
+      <y>252</y>
+      <w>21</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>798</x>
+      <y>308</y>
+      <w>70</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>*
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>798</x>
+      <y>259</y>
+      <w>70</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>0:1
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
