@@ -76,7 +76,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
         }
 
         if (!errors.hasErrors("text")) {
-            errors.state(request, SpamDetect.isSpamText(entity.getText(), params), "text", "anonymous.shout.error.spam");
+            errors.state(request, !SpamDetect.isSpamText(entity.getText(), params), "text", "anonymous.shout.error.spam");
         }
 
     }
