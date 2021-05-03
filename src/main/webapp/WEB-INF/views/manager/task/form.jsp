@@ -39,10 +39,12 @@
 	<acme:form-textarea code="authenticated.manager.task.create.label.description" path="description"/>
 	<acme:form-checkbox code="authenticated.manager.task.create.label.privacy" path="privacy"/>
 	
+
      	<acme:form-submit code="authenticated.manager.task.list.button.delete" action="/manager/task/delete"/>
      	<acme:form-submit code="authenticated.manager.task.list.button.update" action="/manager/task/update"/>
 		<acme:form-return code="authenticated.manager.task.form.button.return"/>
 	</acme:form>
 </jstl:if>
+
 
 
