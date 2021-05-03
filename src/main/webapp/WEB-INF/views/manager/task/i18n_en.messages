@@ -24,3 +24,7 @@ authenticated.manager.task.create.label.privacy = Private
 
 authenticated.manager.task.form.button.create = Create
 authenticated.manager.task.form.button.return = Return
+
+manager.task.error.spam = Text detected as Spam
+manager.task.error.fechafin = End date can´t be before start date
+manager.task.error.fechainicio = Start date can´t be before today

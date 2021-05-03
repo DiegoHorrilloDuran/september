@@ -11,9 +11,11 @@ import org.springframework.stereotype.Service;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.CustomisationParameter;
 import acme.framework.entities.Manager;
 import acme.framework.entities.Task;
 import acme.framework.services.AbstractUpdateService;
+import acme.framework.utilities.SpamDetect;
 
 @Service
 public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, Task>{
@@ -68,13 +70,23 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		assert entity != null;
 		assert errors != null;
         final Date ahora = Date.from(Instant.now());
+        errors.state(request, !entity.getStart().before(ahora), "start", "manager.task.error.fechainicio");
+        errors.state(request, entity.getStart().before(entity.getEnd()), "end", "manager.task.error.fechafin");  
         
+        final CustomisationParameter params = this.repository.findSpam().get(0);
+
+        if (!errors.hasErrors("title")) {
+            errors.state(request, !SpamDetect.isSpamText(entity.getTitle(),params), "title", "anonymous.shout.error.spam");
+        }
+
+        if (!errors.hasErrors("description")) {
+            errors.state(request, !SpamDetect.isSpamText(entity.getDescription(), params), "description", "manager.task.error.spam");
+        }
+
+  
         
-        
-      errors.state(request, !entity.getStart().before(ahora), "start", "La fecha de inicio no puede ser anterior a la actual");
-		errors.state(request, entity.getStart().before(entity.getEnd()), "end", "La fecha de fin no puede ser anterior a la de inicio");
-		
-	}
+     }
+	
 
 	@Override
 	public void update(final Request<Task> request, final Task entity) {
