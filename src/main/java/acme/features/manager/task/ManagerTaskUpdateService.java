@@ -69,9 +69,18 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-        final Date ahora = Date.from(Instant.now());
-        errors.state(request, !entity.getStart().before(ahora), "start", "manager.task.error.fechainicio");
-        errors.state(request, entity.getStart().before(entity.getEnd()), "end", "manager.task.error.fechafin");  
+		
+		final Date ahora = Date.from(Instant.now());
+        final Double wl = entity.getWorkload();
+        
+        if (!errors.hasErrors("start") && !errors.hasErrors("end") && !errors.hasErrors("workload")) {
+        	errors.state(request, wl<=entity.getExecutionPeriod(), "workload", "manager.task.error.workload"); 
+        }
+        
+        if (!errors.hasErrors("start") && !errors.hasErrors("end")) {
+        	errors.state(request, !entity.getStart().before(ahora), "start", "manager.task.error.fechainicio");
+        	errors.state(request, entity.getStart().before(entity.getEnd()), "end", "manager.task.error.fechafin");  
+        }
         
         final CustomisationParameter params = this.repository.findSpam().get(0);
 
@@ -82,9 +91,6 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
         if (!errors.hasErrors("description")) {
             errors.state(request, !SpamDetect.isSpamText(entity.getDescription(), params), "description", "manager.task.error.spam");
         }
-
-  
-        
      }
 	
 
@@ -106,6 +112,12 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		workload = request.getModel().getDouble("workload");
 		description = request.getModel().getString("description");
 		privacy = request.getModel().getBoolean("privacy");
+
+		final Double dec = workload - workload.intValue();
+		
+		if(dec>=0.6) {
+			workload=workload+1-0.6;
+		}
 		
 		entity.setTitle(title);
 		entity.setStart(start);

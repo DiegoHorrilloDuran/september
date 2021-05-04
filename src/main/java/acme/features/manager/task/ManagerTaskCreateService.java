@@ -68,8 +68,16 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
         assert errors != null;
      
         final Date ahora = Date.from(Instant.now());
-        errors.state(request, !entity.getStart().before(ahora), "start", "manager.task.error.fechainicio");
-        errors.state(request, entity.getStart().before(entity.getEnd()), "end", "manager.task.error.fechafin");  
+        final Double wl = entity.getWorkload();
+        
+        if (!errors.hasErrors("start") && !errors.hasErrors("end") && !errors.hasErrors("workload")) {
+        	errors.state(request, wl<=entity.getExecutionPeriod(), "workload", "manager.task.error.workload"); 
+        }
+        
+        if (!errors.hasErrors("start") && !errors.hasErrors("end")) {
+        	errors.state(request, !entity.getStart().before(ahora), "start", "manager.task.error.fechainicio");
+        	errors.state(request, entity.getStart().before(entity.getEnd()), "end", "manager.task.error.fechafin");  
+        }
         
         final CustomisationParameter params = this.repository.findSpam().get(0);
 
@@ -80,15 +88,22 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
         if (!errors.hasErrors("description")) {
             errors.state(request, !SpamDetect.isSpamText(entity.getDescription(), params), "description", "manager.task.error.spam");
         }
-
-  
         
-     }
+    }
 
 	@Override
 	public void create(final Request<Task> request, final Task entity) {
 		assert request != null;
 		assert entity != null;
+		
+		Double wl = request.getModel().getDouble("workload");
+		final Double dec = wl - wl.intValue();
+		
+		if(dec>=0.6) {
+			wl=wl+1-0.6;
+			
+			entity.setWorkload(wl);
+		}
 		
 		this.repository.save(entity);
 	}

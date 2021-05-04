@@ -81,19 +81,21 @@
 <bean id="task01" class="acme.framework.entities.Task">
 	<property name="title" value="Tarea 1"/>
 	<property name="start" value="2021/09/12 15:00"/>
-	<property name="end"   value="2021/09/13 17:00"/>
+	<property name="end"   value="2021/09/13 15:00"/>
 	<property name="workload" value="2.0"/>
 	<property name="description" value="Esto es una tarea"/>
 	<property name="privacy" value="true"/>
+	<property name="idmanager" value="7"/>
 </bean>
 
 <bean id="task02" class="acme.framework.entities.Task">
 	<property name="title" value="Tarea 2"/>
 	<property name="start" value="2021/09/15 15:00"/>
-	<property name="end"   value="2021/09/17 18:00"/>
+	<property name="end"   value="2021/09/17 15:00"/>
 	<property name="workload" value="8.0"/>
 	<property name="description" value="Esto es otra tarea"/>
 	<property name="privacy" value="false"/>
+	<property name="idmanager" value="7"/>
 </bean>
 
 <bean id="task03" class="acme.framework.entities.Task">
@@ -103,114 +105,157 @@
 	<property name="workload" value="6.0"/>
 	<property name="description" value="Esto es otra tarea"/>
 	<property name="privacy" value="false"/>
+	<property name="idmanager" value="7"/>
 </bean>
 
 <bean id="task04" class="acme.framework.entities.Task">
 	<property name="title" value="Tarea 4"/>
-	<property name="start" value="2021/09/08 15:00"/>
+	<property name="start" value="2021/09/08 18:00"/>
 	<property name="end"   value="2021/09/13 18:00"/>
 	<property name="workload" value="9.0"/>
 	<property name="description" value="Esto es otra tarea"/>
 	<property name="privacy" value="false"/>
+	<property name="idmanager" value="7"/>
 </bean>
 
 <bean id="task05" class="acme.framework.entities.Task">
 	<property name="title" value="Tarea 5"/>
 	<property name="start" value="2021/09/20 14:00"/>
-	<property name="end"   value="2021/09/25 18:00"/>
+	<property name="end"   value="2021/09/25 14:00"/>
 	<property name="workload" value="8.0"/>
 	<property name="description" value="Esto es otra tarea"/>
 	<property name="privacy" value="false"/>
+	<property name="idmanager" value="7"/>
 </bean>
 
 <bean id="task06" class="acme.framework.entities.Task">
 	<property name="title" value="Tarea 6"/>
 	<property name="start" value="2021/10/03 10:00"/>
-	<property name="end"   value="2021/10/05 15:00"/>
+	<property name="end"   value="2021/10/05 10:00"/>
 	<property name="workload" value="9.0"/>
 	<property name="description" value="Esto es otra tarea"/>
 	<property name="privacy" value="false"/>
+	<property name="idmanager" value="7"/>
 </bean>
 
 <bean id="task07" class="acme.framework.entities.Task">
 	<property name="title" value="Tarea 7"/>
-	<property name="start" value="2021/11/15 15:00"/>
-	<property name="end"   value="2021/11/17 18:00"/>
+	<property name="start" value="2021/11/15 16:00"/>
+	<property name="end"   value="2021/11/17 16:00"/>
 	<property name="workload" value="8.0"/>
 	<property name="description" value="Esto es otra tarea"/>
 	<property name="privacy" value="false"/>
+	<property name="idmanager" value="7"/>
 </bean>
 
 <bean id="task08" class="acme.framework.entities.Task">
 	<property name="title" value="Tarea 8"/>
-	<property name="start" value="2021/09/05 15:00"/>
+	<property name="start" value="2021/09/05 18:00"/>
 	<property name="end"   value="2021/09/07 18:00"/>
 	<property name="workload" value="5.0"/>
 	<property name="description" value="Esto es otra tarea"/>
 	<property name="privacy" value="true"/>
+	<property name="idmanager" value="7"/>
 </bean>
 
 <bean id="task09" class="acme.framework.entities.Task">
 	<property name="title" value="Tarea 9"/>
 	<property name="start" value="2021/09/08 08:00"/>
-	<property name="end"   value="2021/09/09 18:00"/>
+	<property name="end"   value="2021/09/09 08:00"/>
 	<property name="workload" value="5.0"/>
 	<property name="description" value="Esto es otra tarea"/>
 	<property name="privacy" value="true"/>
+	<property name="idmanager" value="10"/>
 </bean>
 
 <bean id="task10" class="acme.framework.entities.Task">
 	<property name="title" value="Tarea 10"/>
 	<property name="start" value="2021/02/20 15:00"/>
-	<property name="end"   value="2021/02/22 18:00"/>
+	<property name="end"   value="2021/02/22 15:00"/>
 	<property name="workload" value="8.0"/>
 	<property name="description" value="Esto es otra tarea"/>
 	<property name="privacy" value="false"/>
+	<property name="idmanager" value="10"/>
 </bean>
 
 <bean id="task11" class="acme.framework.entities.Task">
 	<property name="title" value="Tarea 11"/>
-	<property name="start" value="2021/03/11 15:00"/>
-	<property name="end"   value="2021/03/15 18:00"/>
+	<property name="start" value="2021/03/11 11:00"/>
+	<property name="end"   value="2021/03/15 11:00"/>
 	<property name="workload" value="8.0"/>
 	<property name="description" value="Esto es otra tarea"/>
 	<property name="privacy" value="false"/>
+	<property name="idmanager" value="10"/>
 </bean>
 
 <bean id="task12" class="acme.framework.entities.Task">
 	<property name="title" value="Tarea 12"/>
-	<property name="start" value="2021/01/10 14:00"/>
+	<property name="start" value="2021/01/10 19:00"/>
 	<property name="end"   value="2021/01/15 19:00"/>
 	<property name="workload" value="8.0"/>
 	<property name="description" value="Esto es otra tarea"/>
 	<property name="privacy" value="false"/>
+	<property name="idmanager" value="10"/>
 </bean>
 
 <bean id="task13" class="acme.framework.entities.Task">
 	<property name="title" value="Tarea 13"/>
-	<property name="start" value="2021/03/02 18:00"/>
+	<property name="start" value="2021/03/02 20:00"/>
 	<property name="end"   value="2021/03/06 20:00"/>
 	<property name="workload" value="8.0"/>
 	<property name="description" value="Esto es otra tarea"/>
 	<property name="privacy" value="false"/>
+	<property name="idmanager" value="10"/>
 </bean>
 
 <bean id="task14" class="acme.framework.entities.Task">
 	<property name="title" value="Tarea 14"/>
 	<property name="start" value="2021/03/05 13:00"/>
-	<property name="end"   value="2021/03/07 17:00"/>
+	<property name="end"   value="2021/03/07 13:00"/>
 	<property name="workload" value="8.0"/>
 	<property name="description" value="Esto es otra tarea"/>
 	<property name="privacy" value="false"/>
+	<property name="idmanager" value="10"/>
 </bean>
 
 <bean id="task15" class="acme.framework.entities.Task">
 	<property name="title" value="Tarea 15"/>
-	<property name="start" value="2021/02/17 08:00"/>
+	<property name="start" value="2021/02/17 18:00"/>
 	<property name="end"   value="2021/02/20 18:00"/>
 	<property name="workload" value="8.0"/>
 	<property name="description" value="Esto es otra tarea"/>
 	<property name="privacy" value="false"/>
+	<property name="idmanager" value="10"/>
+</bean>
+
+<bean id="task16" class="acme.framework.entities.Task">
+	<property name="title" value="Tarea 16"/>
+	<property name="start" value="2021/08/20 15:00"/>
+	<property name="end"   value="2021/08/23 15:00"/>
+	<property name="workload" value="8.0"/>
+	<property name="description" value="Esto es otra tarea"/>
+	<property name="privacy" value="false"/>
+	<property name="idmanager" value="10"/>
+</bean>
+
+<bean id="task17" class="acme.framework.entities.Task">
+	<property name="title" value="Tarea 17"/>
+	<property name="start" value="2021/08/20 15:00"/>
+	<property name="end"   value="2021/08/22 15:00"/>
+	<property name="workload" value="8.0"/>
+	<property name="description" value="Esto es otra tarea"/>
+	<property name="privacy" value="false"/>
+	<property name="idmanager" value="10"/>
+</bean>
+
+<bean id="task18" class="acme.framework.entities.Task">
+	<property name="title" value="Tarea 18"/>
+	<property name="start" value="2021/08/20 18:00"/>
+	<property name="end"   value="2021/08/24 18:00"/>
+	<property name="workload" value="8.0"/>
+	<property name="description" value="Esto es otra tarea"/>
+	<property name="privacy" value="false"/>
+	<property name="idmanager" value="10"/>
 </bean>
 
 <!-- Shouts -->

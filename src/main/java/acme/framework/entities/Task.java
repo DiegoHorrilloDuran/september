@@ -7,6 +7,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
 
 import lombok.Getter;
@@ -39,6 +40,7 @@ public class Task extends DomainEntity {
 	 protected Date		end;
 	 
 	 @NotNull
+	 @Positive
 	 protected Double	workload;
 	 
 	 @NotEmpty
@@ -48,7 +50,28 @@ public class Task extends DomainEntity {
 	 @NotNull
 	 protected Boolean 	privacy;
 	 
+	 @NotNull
 	 protected Integer idmanager;
 	 
-
+	 //Derived Attributes
+	 
+	 public Double getExecutionPeriod() {
+		 Double res = null;
+		 
+		 final Date eStart = this.start;
+		 final Date eEnd = this.end;
+		 
+		 final int days = eEnd.getDay() - eStart.getDay();
+		 final int hours = (eEnd.getHours() - eStart.getHours()) + (days * 24);
+		 int minutes = eEnd.getMinutes() - eStart.getMinutes();
+		 if(minutes<0) {
+			 minutes = 60 + minutes;
+		 }
+		 if(minutes<10) {
+			 res = Double.valueOf(hours + ".0" + minutes);
+		 } else {
+			 res = Double.valueOf(hours + "." + minutes);
+		 }
+		 return res;
+	 }
 }
