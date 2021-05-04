@@ -49,6 +49,11 @@
 		<acme:menu-suboption code="master.menu.authenticated.task" action="/authenticated/task/list"/>
 		</acme:menu-option>
 		
+				<acme:menu-option code="master.menu.manager" access="hasRole('Manager')">
+		<acme:menu-suboption code="master.menu.manager.task.list" action="/manager/task/list"/>
+		<acme:menu-suboption code="master.menu.manager.task.create" action="/manager/task/create"/>
+		</acme:menu-option>
+		
 	</acme:menu-left>
 
 	<acme:menu-right>

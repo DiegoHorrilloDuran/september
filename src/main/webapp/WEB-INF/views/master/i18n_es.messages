@@ -49,6 +49,12 @@ master.menu.administrator.shutdown = Parar el sistema
 master.menu.authenticated = Autenticado
 master.menu.authenticated.task = Tareas públicas
 
+# master.menu.manager ########################################################
+
+master.menu.manager = Manager
+master.menu.manager.task.list = Tareas del manager
+master.menu.manager.task.create = Crear tarea
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor
