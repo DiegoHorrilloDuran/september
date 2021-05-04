@@ -64,6 +64,17 @@ public class AdministratorCustomisationParameterUpdateService implements Abstrac
 		assert entity != null;
 		assert errors != null;
 		
+		Double threshold;
+		Boolean isPercentage;
+		
+		threshold = entity.getThreshold();
+		isPercentage = threshold <= 100.00;
+		
+		if (!errors.hasErrors("threshold")) {
+            errors.state(request, isPercentage, "threshold", "administrator.customisation-parameter.error.threshold");
+        }
+
+		
 	}
 
 	@Override
