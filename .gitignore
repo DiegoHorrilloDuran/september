@@ -29,3 +29,8 @@ nbdist/
 mvnw
 
 mvnw\.cmd
+<<<<<<< HEAD
+/bin/
+=======
+/bin/
+>>>>>>> branch 'Task-B03' of https://github.com/DiegoHorrilloDuran/Acme-Planner.git

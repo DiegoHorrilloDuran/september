@@ -73,4 +73,12 @@
 		<property name="userAccount" ref="administratorUserAccount" />
 	</bean>
 	
+	<!-- Customisation parameters -->
+	
+	<bean id="CustomParam" class="acme.framework.entities.CustomisationParameter">
+		<property name="spamWords" value="sex,hard core,viagra,cialis,nigeria,you’ve won,million dollar"/>
+		<property name="threshold" value="10.0"/>
+	</bean>
+	
+	
 </beans>
