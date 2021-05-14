@@ -1,3 +1,4 @@
+
 {
    "build": {
         "type": "maven",
@@ -6,10 +7,9 @@
    "deploy": {
         "container": "TOMCAT8",
         "war": [{
-            "file": "target/Acme-Planner.war",
+            "file": "target/Acme-Planner-21.2.war",
             "context": "/",
             "port": 443
         }]
     }
 }
-
