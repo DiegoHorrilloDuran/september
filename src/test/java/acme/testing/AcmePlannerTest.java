@@ -35,7 +35,7 @@ public abstract class AcmePlannerTest extends AcmeTest{
 		super.checkLinkExists("Account");
 	}
 	
-	private void signOut() {
+	protected void signOut() {
 		super.navigateHome();
 		super.clickOnMenu("Sign out", null);
 		super.checkSimplePath("/master/welcome");
