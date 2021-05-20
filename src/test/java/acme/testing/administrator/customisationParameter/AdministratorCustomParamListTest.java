@@ -9,8 +9,9 @@ import acme.testing.AcmePlannerTest;
 
 public class AdministratorCustomParamListTest extends AcmePlannerTest {
 
+	//Listing positive test case.
 	@ParameterizedTest
-	@CsvFileSource(resources = "administrator/customisationParameter/list-all.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/administrator/customisationParameter/list-all.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void listAll(final int recordIndex, final String spamWords, final String threshold) {
 		super.signIn("administrator", "administrator");
