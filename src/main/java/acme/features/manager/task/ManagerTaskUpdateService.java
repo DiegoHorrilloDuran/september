@@ -15,6 +15,7 @@ import acme.framework.entities.CustomisationParameter;
 import acme.framework.entities.Manager;
 import acme.framework.entities.Task;
 import acme.framework.services.AbstractUpdateService;
+import acme.framework.utilities.Duration;
 import acme.framework.utilities.SpamDetect;
 
 @Service
@@ -71,26 +72,26 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		assert errors != null;
 		
 		final Date ahora = Date.from(Instant.now());
-        final Double wl = entity.getWorkload();
-        
-        if (!errors.hasErrors("start") && !errors.hasErrors("end") && !errors.hasErrors("workload")) {
-        	errors.state(request, wl<=entity.getExecutionPeriod(), "workload", "manager.task.error.workload"); 
-        }
-        
-        if (!errors.hasErrors("start") && !errors.hasErrors("end")) {
-        	errors.state(request, !entity.getStart().before(ahora), "start", "manager.task.error.fechainicio");
-        	errors.state(request, entity.getStart().before(entity.getEnd()), "end", "manager.task.error.fechafin");  
-        }
-        
-        final CustomisationParameter params = this.repository.findSpam().get(0);
+		final Double wl = Duration.correctPeriod(entity.getWorkload());
 
-        if (!errors.hasErrors("title")) {
-            errors.state(request, !SpamDetect.isSpamText(entity.getTitle(),params), "title", "anonymous.shout.error.spam");
-        }
+		if (!errors.hasErrors("start") && !errors.hasErrors("end")) {
+			errors.state(request, !entity.getStart().before(ahora), "start", "manager.task.error.fechainicio");
+			errors.state(request, entity.getStart().before(entity.getEnd()), "end", "manager.task.error.fechafin");
+		}
 
-        if (!errors.hasErrors("description")) {
-            errors.state(request, !SpamDetect.isSpamText(entity.getDescription(), params), "description", "manager.task.error.spam");
-        }
+		if (!errors.hasErrors("start") && !errors.hasErrors("end") && !errors.hasErrors("workload")) {
+			errors.state(request, wl <= entity.getExecutionPeriod(), "workload", "manager.task.error.workload");
+		}
+
+		final CustomisationParameter params = this.repository.findSpam().get(0);
+
+		if (!errors.hasErrors("title")) {
+			errors.state(request, !SpamDetect.isSpamText(entity.getTitle(), params), "title", "anonymous.shout.error.spam");
+		}
+
+		if (!errors.hasErrors("description")) {
+			errors.state(request, !SpamDetect.isSpamText(entity.getDescription(), params), "description", "manager.task.error.spam");
+		}
      }
 	
 
@@ -113,24 +114,17 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		description = request.getModel().getString("description");
 		privacy = request.getModel().getBoolean("privacy");
 
-		final Double dec = workload - workload.intValue();
 		
-		if(dec>=0.6) {
-			workload=workload+1-0.6;
-		}
 		
 		entity.setTitle(title);
 		entity.setStart(start);
 		entity.setEnd(end);
-		entity.setWorkload(workload);
+		entity.setWorkload(Duration.correctPeriod(workload));
 		entity.setDescription(description);
 		entity.setPrivacy(privacy);
 		
 		this.repository.save(entity);
 		
 	}
-	
-	
-	
 
 }

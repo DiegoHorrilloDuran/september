@@ -14,6 +14,7 @@ import acme.framework.entities.CustomisationParameter;
 import acme.framework.entities.Manager;
 import acme.framework.entities.Task;
 import acme.framework.services.AbstractCreateService;
+import acme.framework.utilities.Duration;
 import acme.framework.utilities.SpamDetect;
 
 @Service
@@ -70,7 +71,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		assert errors != null;
 
 		final Date ahora = Date.from(Instant.now());
-		final Double wl = this.correctPeriod(entity.getWorkload());
+		final Double wl = Duration.correctPeriod(entity.getWorkload());
 
 		if (!errors.hasErrors("start") && !errors.hasErrors("end")) {
 			errors.state(request, !entity.getStart().before(ahora), "start", "manager.task.error.fechainicio");
@@ -100,20 +101,9 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 
 		final Double wl = request.getModel().getDouble("workload");
 
-		entity.setWorkload(this.correctPeriod(wl));
+		entity.setWorkload(Duration.correctPeriod(wl));
 
 		this.repository.save(entity);
 	}
 
-	//Corrects a double (Hours.minutes)
-	private Double correctPeriod(final Double period) {
-		Double res = new Double(period);
-
-		final Double dec = res - res.intValue();
-		if (dec >= .6) {
-			res = res + 1 - .6;
-		}
-
-		return res;
-	}
 }
