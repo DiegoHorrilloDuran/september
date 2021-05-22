@@ -10,6 +10,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
 
+import acme.framework.utilities.Duration;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -56,22 +57,6 @@ public class Task extends DomainEntity {
 	 //Derived Attributes
 	 
 	 public Double getExecutionPeriod() {
-		 Double res = null;
-		 
-		 final Date eStart = this.start;
-		 final Date eEnd = this.end;
-		 
-		 final int days = eEnd.getDay() - eStart.getDay();
-		 final int hours = (eEnd.getHours() - eStart.getHours()) + (days * 24);
-		 int minutes = eEnd.getMinutes() - eStart.getMinutes();
-		 if(minutes<0) {
-			 minutes = 60 + minutes;
-		 }
-		 if(minutes<10) {
-			 res = Double.valueOf(hours + ".0" + minutes);
-		 } else {
-			 res = Double.valueOf(hours + "." + minutes);
-		 }
-		 return res;
+		 return Duration.getDuration(this.start, this.end);
 	 }
 }

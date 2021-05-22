@@ -30,7 +30,7 @@
 	<acme:form-return code="authenticated.manager.task.form.button.return"/>
 	</acme:form>
 </jstl:if>
-<jstl:if test="${command=='show' }">
+<jstl:if test="${command=='show' or command=='update'}">
 	<acme:form>
 	<acme:form-textbox code="authenticated.manager.task.create.label.title" path="title"/>
 	<acme:form-textbox code="authenticated.manager.task.create.label.start" path="start"/>
