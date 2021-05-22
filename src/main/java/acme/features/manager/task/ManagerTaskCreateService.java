@@ -1,3 +1,4 @@
+
 package acme.features.manager.task;
 
 import java.time.Instant;
@@ -19,8 +20,9 @@ import acme.framework.utilities.SpamDetect;
 public class ManagerTaskCreateService implements AbstractCreateService<Manager, Task> {
 
 	@Autowired
-	protected  ManagerTaskRepository repository;
-	
+	protected ManagerTaskRepository repository;
+
+
 	@Override
 	public boolean authorise(final Request<Task> request) {
 		assert request != null;
@@ -32,9 +34,9 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		
+
 		request.bind(entity, errors);
-		
+
 	}
 
 	@Override
@@ -42,72 +44,76 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		
+
 		request.unbind(entity, model, "title", "start", "end", "workload", "description", "privacy", "idmanager");
 	}
 
 	@Override
 	public Task instantiate(final Request<Task> request) {
 		assert request != null;
-		
+
 		Task result;
 		Integer manager;
-		
+
 		manager = request.getPrincipal().getAccountId();
-		
+
 		result = new Task();
 		result.setIdmanager(manager);
-		
+
 		return result;
 	}
 
 	@Override
 	public void validate(final Request<Task> request, final Task entity, final Errors errors) {
-        assert request != null;
-        assert entity != null;
-        assert errors != null;
-     
-        final Date ahora = Date.from(Instant.now());
-        final Double wl = entity.getWorkload();
-        
-        if (!errors.hasErrors("start") && !errors.hasErrors("end") && !errors.hasErrors("workload")) {
-        	errors.state(request, wl<=entity.getExecutionPeriod(), "workload", "manager.task.error.workload"); 
-        }
-        
-        if (!errors.hasErrors("start") && !errors.hasErrors("end")) {
-        	errors.state(request, !entity.getStart().before(ahora), "start", "manager.task.error.fechainicio");
-        	errors.state(request, entity.getStart().before(entity.getEnd()), "end", "manager.task.error.fechafin");  
-        }
-        
-        final CustomisationParameter params = this.repository.findSpam().get(0);
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
 
-        if (!errors.hasErrors("title")) {
-            errors.state(request, !SpamDetect.isSpamText(entity.getTitle(),params), "title", "anonymous.shout.error.spam");
-        }
+		final Date ahora = Date.from(Instant.now());
+		final Double wl = this.correctPeriod(entity.getWorkload());
 
-        if (!errors.hasErrors("description")) {
-            errors.state(request, !SpamDetect.isSpamText(entity.getDescription(), params), "description", "manager.task.error.spam");
-        }
-        
-    }
+		if (!errors.hasErrors("start") && !errors.hasErrors("end")) {
+			errors.state(request, !entity.getStart().before(ahora), "start", "manager.task.error.fechainicio");
+			errors.state(request, entity.getStart().before(entity.getEnd()), "end", "manager.task.error.fechafin");
+		}
+
+		if (!errors.hasErrors("start") && !errors.hasErrors("end") && !errors.hasErrors("workload")) {
+			errors.state(request, wl <= entity.getExecutionPeriod(), "workload", "manager.task.error.workload");
+		}
+
+		final CustomisationParameter params = this.repository.findSpam().get(0);
+
+		if (!errors.hasErrors("title")) {
+			errors.state(request, !SpamDetect.isSpamText(entity.getTitle(), params), "title", "anonymous.shout.error.spam");
+		}
+
+		if (!errors.hasErrors("description")) {
+			errors.state(request, !SpamDetect.isSpamText(entity.getDescription(), params), "description", "manager.task.error.spam");
+		}
+
+	}
 
 	@Override
 	public void create(final Request<Task> request, final Task entity) {
 		assert request != null;
 		assert entity != null;
-		
-		Double wl = request.getModel().getDouble("workload");
-		final Double dec = wl - wl.intValue();
-		
-		if(dec>=0.6) {
-			wl=wl+1-0.6;
-			
-			entity.setWorkload(wl);
-		}
-		
+
+		final Double wl = request.getModel().getDouble("workload");
+
+		entity.setWorkload(this.correctPeriod(wl));
+
 		this.repository.save(entity);
 	}
 
+	//Corrects a double (Hours.minutes)
+	private Double correctPeriod(final Double period) {
+		Double res = new Double(period);
 
-	
+		final Double dec = res - res.intValue();
+		if (dec >= .6) {
+			res = res + 1 - .6;
+		}
+
+		return res;
+	}
 }
