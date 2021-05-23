@@ -1,3 +1,3 @@
-recordIndex,title,start,end,workload,description,privacy
-6, Tarea1,05/06/2021 00:00,07/08/2021 16:00,15.00,esto es algo,false
-7, Tarea2,09/11/2021 00:00,18/12/2021 18:00,15.00,esto es algo,true
+recordIndex,title,start,end,workload,description
+0, TareaTEST1,2021/06/05 00:00,2021/08/07 16:00,15.00,esto es algo
+8, TareaTEST2,2021/11/09 00:00,2021/12/18 18:00,15.00,esto es algo
