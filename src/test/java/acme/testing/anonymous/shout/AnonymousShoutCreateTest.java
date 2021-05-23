@@ -6,10 +6,12 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.AcmePlannerTest;
 
-
-//Aquí vamos a testear crear una nueva Shout, sin fallos, en la que probamos dos casos, uno con el parámetro info relleno y otro vacío
 public class AnonymousShoutCreateTest extends AcmePlannerTest {
 	
+	/*CASO POSITIVO
+	1. Todo relleno correctamente
+	2. Todo relleno excepto Información
+	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/anonymous/shout/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
     @Order(10)
@@ -24,5 +26,27 @@ public class AnonymousShoutCreateTest extends AcmePlannerTest {
 		super.clickOnSubmitButton("Shout!");
 		
 	}
-
+	
+	/*CASO NEGATIVO
+	1. Longitud de Nombre incorrecto
+	2. Información rellenada incorrectamente
+	3. Texto rellenado con Spam
+	4. Texto superior al 10% de Spam
+	5. Todos los errores a la vez
+	 */		
+	@ParameterizedTest
+	@CsvFileSource(resources = "/anonymous/shout/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@Order(10)
+	public void createNegative(final int recordIndex, final String author, final String text, final String info) {
+			
+		super.clickOnMenu("Anonymous", "New shout");
+			
+		super.fillInputBoxIn("author", author);
+		super.fillInputBoxIn("text", text);
+		super.fillInputBoxIn("info", info);
+			
+		super.clickOnSubmitButton("Shout!");
+		super.checkErrorsExist();
+			
+	}
 }
