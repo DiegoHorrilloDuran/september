@@ -35,14 +35,14 @@ public abstract class AcmePlannerTest extends AcmeTest{
 		super.checkLinkExists("Account");
 	}
 	
-	private void signOut() {
+	protected void signOut() {
 		super.navigateHome();
 		super.clickOnMenu("Sign out", null);
 		super.checkSimplePath("/master/welcome");
 		
 	}
 	
-	protected void signIn(final String username, final String password, final String name, final String surname, final String email, final String phone) {
+	protected void signUp(final String username, final String password, final String name, final String surname, final String email, final String phone) {
 		assert !StringHelper.isBlank(username);
 		assert !StringHelper.isBlank(password);
 		assert !StringHelper.isBlank(name);
