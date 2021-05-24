@@ -10,6 +10,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.URL;
+
 import acme.framework.utilities.Duration;
 import lombok.Getter;
 import lombok.Setter;
@@ -53,6 +55,9 @@ public class Task extends DomainEntity {
 	 
 	 @NotNull
 	 protected Integer idmanager;
+	 
+	 @URL
+	 protected String optionalLink;
 	 
 	 //Derived Attributes
 	 
