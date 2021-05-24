@@ -37,4 +37,14 @@ public class AdministratorDashboardShowTest extends AcmePlannerTest {
 		super.signOut();
 	}
 	
+	//Listing negative test case.
+		@ParameterizedTest
+		@CsvFileSource(resources = "/administrator/dashboard/show-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+		@Order(10)
+		public void listAllNegative(final int recordIndex, final String path) {
+						
+			super.navigateTo(path);
+			super.checkErrorsExist();
+		}
+		
 }

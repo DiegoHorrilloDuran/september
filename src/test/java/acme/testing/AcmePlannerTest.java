@@ -65,4 +65,16 @@ public abstract class AcmePlannerTest extends AcmeTest{
 		super.checkLinkExists("Account");
 	}
 	
+	protected void navigateTo(final String path) {
+		assert this.isSimplePath(path);
+
+		this.navigate(() -> {
+			String url;
+
+			url = String.format("%s/%s", this.baseUrl, path);
+			this.driver.get(url);
+			this.longSleep();
+		});
+	}
+	
 }
