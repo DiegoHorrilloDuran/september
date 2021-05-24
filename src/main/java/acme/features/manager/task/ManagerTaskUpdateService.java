@@ -72,7 +72,10 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		assert errors != null;
 		
 		final Date ahora = Date.from(Instant.now());
-		final Double wl = Duration.correctPeriod(entity.getWorkload());
+		Double wl = entity.getWorkload();
+		if (wl != null) {
+			wl = Duration.correctPeriod(wl);
+		}
 
 		if (!errors.hasErrors("start") && !errors.hasErrors("end")) {
 			errors.state(request, !entity.getStart().before(ahora), "start", "manager.task.error.fechainicio");
