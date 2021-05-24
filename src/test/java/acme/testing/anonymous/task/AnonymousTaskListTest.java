@@ -22,24 +22,23 @@ public class AnonymousTaskListTest extends AcmePlannerTest{
 		
 		super.clickOnMenu("Anonymous", "Tasks");
 		
-		super.checkColumnHasValue(recordIndex, 1, title);
-		super.checkColumnHasValue(recordIndex, 2, start);
-		super.checkColumnHasValue(recordIndex, 3, end);
+		super.checkColumnHasValue(recordIndex, 0, title);
+		super.checkColumnHasValue(recordIndex, 1, start);
+		super.checkColumnHasValue(recordIndex, 2, end);
 		
 	
 		//Testeamos el show
-		/*
-		super.clickOnListingRecord(id);
 		
-		super.checkInputBoxHasValue("idManager", idManager);
-		super.checkInputBoxHasValue("description", description);
-		super.checkInputBoxHasValue("end", end);
-		super.checkInputBoxHasValue("privacy", privacy);
-		super.checkInputBoxHasValue("start", start);
+		super.clickOnListingRecord(recordIndex);
+		
+
 		super.checkInputBoxHasValue("title", title);
+		super.checkInputBoxHasValue("start", start);
+		super.checkInputBoxHasValue("end", end);
 		super.checkInputBoxHasValue("workload", workload);
+		super.checkInputBoxHasValue("description", description);
 		
-		*/
+		
 	}
 
 }
