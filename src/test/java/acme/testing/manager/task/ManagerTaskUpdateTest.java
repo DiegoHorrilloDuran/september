@@ -21,7 +21,7 @@ public class ManagerTaskUpdateTest extends AcmePlannerTest {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/task/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
     @Order(10)
-	public void createPositive(final int recordIndex, final String title, final String start, final String end, final String workload, final String description) {
+	public void updatePositive(final int recordIndex, final String title, final String start, final String end, final String workload, final String description, final String optionalLink) {
 		
 		//Iniciamos sesion con el usuario de manager01
 		super.signIn("manager01", "manager01");
@@ -38,6 +38,7 @@ public class ManagerTaskUpdateTest extends AcmePlannerTest {
 		super.fillInputBoxIn("end", end);
 		super.fillInputBoxIn("workload", workload);
 		super.fillInputBoxIn("description", description);
+		super.fillInputBoxIn("optionalLink", optionalLink);
 		
 		super.clickOnSubmitButton("Update"); //le damos al boton para actualizar la tarea
 		
@@ -57,6 +58,7 @@ public class ManagerTaskUpdateTest extends AcmePlannerTest {
 		super.checkInputBoxHasValue("end", end);
 		super.checkInputBoxHasValue("workload", workload);
 		super.checkInputBoxHasValue("description", description);
+		super.checkInputBoxHasValue("optionalLink", optionalLink);
 		
 		//Salimos de la sesion
 		super.signOut();
@@ -76,7 +78,7 @@ public class ManagerTaskUpdateTest extends AcmePlannerTest {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/task/update-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
     @Order(10)
-	public void createNegative(final int recordIndex, final String title, final String start, final String end, final String workload, final String description) {
+	public void updateNegative(final int recordIndex, final String title, final String start, final String end, final String workload, final String description, final String optionalLink) {
 		
 		//Iniciamos sesion con el usuario de manager01
 		super.signIn("manager01", "manager01");
@@ -93,6 +95,7 @@ public class ManagerTaskUpdateTest extends AcmePlannerTest {
 		super.fillInputBoxIn("end", end);
 		super.fillInputBoxIn("workload", workload);
 		super.fillInputBoxIn("description", description);
+		super.fillInputBoxIn("optionalLink", optionalLink);
 		
 		super.clickOnSubmitButton("Update"); //le damos al boton para actualizar la tarea
 		
