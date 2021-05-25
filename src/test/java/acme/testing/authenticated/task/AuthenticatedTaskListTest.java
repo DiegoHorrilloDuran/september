@@ -11,7 +11,7 @@ public class AuthenticatedTaskListTest extends AcmePlannerTest {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/authenticated/task/listAll.csv", encoding = "utf-8", numLinesToSkip = 1)
   @Order(10)
-  public void listAllTasks(final int recordIndex, final String Title, final String Start,final String End,final String Workload, final String Description) {
+  public void listAllTasks(final int recordIndex, final String Title, final String Start,final String End,final String Workload, final String Description, final String OptionalLink) {
 		super.signIn("administrator", "administrator");
 		super.clickOnMenu("Authenticated", "Public tasks");
 		
@@ -29,6 +29,7 @@ public class AuthenticatedTaskListTest extends AcmePlannerTest {
 		super.checkInputBoxHasValue("end", End);
 		super.checkInputBoxHasValue("workload", Workload);
 		super.checkInputBoxHasValue("description", Description);
+		super.checkInputBoxHasValue("optionalLink", OptionalLink);
 		
 		super.signOut();
 	}
