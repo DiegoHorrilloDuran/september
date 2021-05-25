@@ -13,7 +13,7 @@ public class ManagerTaskListTest extends AcmePlannerTest{
 	@CsvFileSource(resources = "/manager/task/listTask.csv", encoding = "utf-8", numLinesToSkip = 1)
     @Order(10)
     public void listManagerTasks(final int recordIndex, final String title, final String start, 
-    	final String end, final String workload, final String description, final String privacy) {
+    	final String end, final String workload, final String description, final String optionalLink, final String privacy) {
 		super.signIn("manager01","manager01");
 		super.clickOnMenu("Manager", "Manager tasks");
 		
@@ -29,7 +29,21 @@ public class ManagerTaskListTest extends AcmePlannerTest{
 		super.checkInputBoxHasValue("end", end);
 		super.checkInputBoxHasValue("workload", workload);
 		super.checkInputBoxHasValue("description", description);
+		super.checkInputBoxHasValue("optionalLink", optionalLink);
 		
+		super.signOut();
+	}
+	
+	/*
+	TEST LIST NEGATIVO
+	*/
+	@ParameterizedTest
+	@CsvFileSource(resources = "/manager/task/list-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@Order(10)
+	public void listAllNegative(final int recordIndex, final String path) {
+		super.signIn("manager01", "manager01");
+		super.navigateTo(path);
+		super.checkErrorsExist();
 		super.signOut();
 	}
 
