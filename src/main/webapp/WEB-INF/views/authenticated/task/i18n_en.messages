@@ -17,6 +17,7 @@ authenticated.task.form.label.start = Start:
 authenticated.task.form.label.end = End:
 authenticated.task.form.label.workload = Workload:
 authenticated.task.form.label.description = Description:
+authenticated.task.form.label.optionalLink = Optional Link: 
 authenticated.task.form.label.privacy = Private
 
 authenticated.task.form.button.return = Return

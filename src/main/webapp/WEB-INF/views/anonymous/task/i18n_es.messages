@@ -18,6 +18,7 @@ anonymous.task.form.label.start = Comienzo:
 anonymous.task.form.label.end = Final:
 anonymous.task.form.label.workload = Carga de trabajo:
 anonymous.task.form.label.description = Descripción:
+anonymous.task.form.label.optionalLink = Link Opcional;
 anonymous.task.form.label.privacy = Privacidad:
 
 anonymous.task.form.button.return = Volver

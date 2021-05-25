@@ -48,7 +48,7 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		assert entity!=null;
 		assert model!=null;
 				
-		request.unbind(entity, model, "title","start","end","workload","description","privacy");
+		request.unbind(entity, model, "title","start","end","workload","description", "optionalLink", "privacy");
 		
 		
 	}
@@ -94,6 +94,10 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 
 		if (!errors.hasErrors("description")) {
 			errors.state(request, !SpamDetect.isSpamText(entity.getDescription(), params), "description", "manager.task.error.spam");
+		}
+		
+		if (!errors.hasErrors("optionalLink")) {
+			errors.state(request, !SpamDetect.isSpamText(entity.getOptionalLink(), params), "optionalLink", "manager.task.error.spam");
 		}
      }
 	
