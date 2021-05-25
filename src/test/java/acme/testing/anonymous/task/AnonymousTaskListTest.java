@@ -16,7 +16,7 @@ public class AnonymousTaskListTest extends AcmePlannerTest{
 	@CsvFileSource(resources = "/anonymous/task/listAll.csv", encoding = "utf-8", numLinesToSkip = 1)
     @Order(10)
     public void listAllTasks(final int recordIndex, final String title, final String start, final String end,
-    	final String workload, final String description, final String privacy) {
+    	final String workload, final String description, final String optionalLink, final String privacy) {
 		
 	//Testeamos el list	
 		
@@ -37,6 +37,7 @@ public class AnonymousTaskListTest extends AcmePlannerTest{
 		super.checkInputBoxHasValue("end", end);
 		super.checkInputBoxHasValue("workload", workload);
 		super.checkInputBoxHasValue("description", description);
+		super.checkInputBoxHasValue("optionalLink", optionalLink);
 		
 		
 	}
