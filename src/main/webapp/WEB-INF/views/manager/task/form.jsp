@@ -24,19 +24,21 @@
 	<acme:form-textbox code="authenticated.manager.task.create.label.end" path="end" placeholder="yyyy/mm/dd hh:mm [en], dd/mm/AAAA hh:mm [es]"/>
 	<acme:form-textbox code="authenticated.manager.task.create.label.workload" path="workload"/>
 	<acme:form-textarea code="authenticated.manager.task.create.label.description" path="description"/>
+	<acme:form-textbox code="authenticated.manager.task.create.label.optionalLink" path="optionalLink"/>
 	<acme:form-checkbox code="authenticated.manager.task.create.label.privacy" path="privacy"/>
 			
 	<acme:form-submit test="${command == 'create'}" code="authenticated.manager.task.form.button.create" action="/manager/task/create"/>
 	<acme:form-return code="authenticated.manager.task.form.button.return"/>
 	</acme:form>
 </jstl:if>
-<jstl:if test="${command=='show' }">
+<jstl:if test="${command=='show' or command=='update'}">
 	<acme:form>
 	<acme:form-textbox code="authenticated.manager.task.create.label.title" path="title"/>
 	<acme:form-textbox code="authenticated.manager.task.create.label.start" path="start"/>
 	<acme:form-textbox code="authenticated.manager.task.create.label.end" path="end"/>
 	<acme:form-textbox code="authenticated.manager.task.create.label.workload" path="workload"/>
 	<acme:form-textarea code="authenticated.manager.task.create.label.description" path="description"/>
+	<acme:form-textbox code="authenticated.manager.task.create.label.optionalLink" path="optionalLink"/>
 	<acme:form-checkbox code="authenticated.manager.task.create.label.privacy" path="privacy"/>
 	
 
