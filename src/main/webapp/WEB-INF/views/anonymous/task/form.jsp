@@ -21,6 +21,7 @@
 	<acme:form-textbox code="anonymous.task.form.label.end" path="end"/>
 	<acme:form-textbox code="anonymous.task.form.label.workload" path="workload"/>
 	<acme:form-textarea code="anonymous.task.form.label.description" path="description"/>
+	<acme:form-textbox code="anonymous.task.form.label.optionalLink" path="optionalLink"/>
 	<acme:form-checkbox code="anonymous.task.form.label.privacy" path="privacy"/>
 	
 	<acme:form-return code="anonymous.task.form.button.return"/>

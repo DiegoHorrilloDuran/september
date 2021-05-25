@@ -6,9 +6,12 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.AcmePlannerTest;
 
-//Aquí vamos a testear el mostrar el listado de todas las shouts disponibles
+
 public class AnonymousShoutListTest extends AcmePlannerTest{
 
+	/*
+	TEST LIST POSITIVO
+	*/
 	@ParameterizedTest
 	@CsvFileSource(resources = "/anonymous/shout/listAll.csv", encoding = "utf-8", numLinesToSkip = 1)
     @Order(10)
@@ -21,4 +24,16 @@ public class AnonymousShoutListTest extends AcmePlannerTest{
 		
 	}
 
+	/*
+	TEST LIST NEGATIVO
+	*/
+	@ParameterizedTest
+	@CsvFileSource(resources = "/anonymous/shout/listAll-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@Order(10)
+	public void listAllNegative(final int recordIndex, final String path) {
+		super.signIn("administrator", "administrator");
+		super.navigateTo(path);
+		super.checkErrorsExist();
+		super.signOut();
+	}
 }

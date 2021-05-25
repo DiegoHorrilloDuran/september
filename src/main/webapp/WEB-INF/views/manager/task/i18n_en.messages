@@ -20,6 +20,7 @@ authenticated.manager.task.create.label.start = Start:
 authenticated.manager.task.create.label.end = End:
 authenticated.manager.task.create.label.workload = Workload:
 authenticated.manager.task.create.label.description = Description:
+authenticated.manager.task.create.label.optionalLink = Optional Link: 
 authenticated.manager.task.create.label.privacy = Private
 
 authenticated.manager.task.form.button.create = Create
