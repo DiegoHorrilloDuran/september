@@ -40,5 +40,15 @@ public class AnonymousTaskListTest extends AcmePlannerTest{
 		
 		
 	}
+	
+	//Listing negative test case.
+			@ParameterizedTest
+			@CsvFileSource(resources = "/anonymous/task/list-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+			@Order(10)
+			public void listAllNegative(final int recordIndex, final String path) {
+							
+				super.navigateTo(path);
+				super.checkErrorsExist();
+			}
 
 }
