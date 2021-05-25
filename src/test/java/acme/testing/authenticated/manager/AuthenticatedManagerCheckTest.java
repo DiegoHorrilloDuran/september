@@ -6,7 +6,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.AcmePlannerTest;
 
-//Aquí vamos a testear si esta un administrador autenticado como manager
+//Aquí vamos a testear si esta un administrador autenticado como manager caso positivo
 public class AuthenticatedManagerCheckTest extends AcmePlannerTest {
 
 	@ParameterizedTest
@@ -17,22 +17,18 @@ public void listAllTasks(final int recordIndex, final String Username, final Str
 		super.clickOnMenu("Account", "Become a manager");
 		super.clickOnSubmitButton("Accept");
 		super.clickOnMenu("Administrator", "User accounts");
-		//super.checkColumnHasValue(recordIndex, 0, Title);
-	//	super.checkColumnHasValue(recordIndex, 1, Start);
-		//super.checkColumnHasValue(recordIndex, 2, End);
-		//super.checkColumnHasValue(recordIndex, 4, Workload);
-		//super.checkColumnHasValue(recordIndex, 5, Description);
-		
-		
-	
 		
 		super.clickOnListingRecord(recordIndex);
-//		super.checkInputBoxHasValue("username", Username);
-//		super.checkInputBoxHasValue("name", Name);
-//		super.checkInputBoxHasValue("surname", Surname);
-//		super.checkInputBoxHasValue("email", Email);
+
 		super.checkInputBoxHasValue("roleList", Roles);
-//		super.checkInputBoxHasValue("status", Status);
 		super.signOut();
 	}
+	//Listing negative test case.
+			@ParameterizedTest
+			@CsvFileSource(resources = "/authenticated/manager/show-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+			@Order(10)
+			public void listAllNegative(final int recordIndex, final String path) {
+				super.navigateTo(path);
+				super.checkErrorsExist();
+			}
 }
