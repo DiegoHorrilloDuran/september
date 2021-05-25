@@ -16,7 +16,7 @@ public class ManagerTaskDeleteTest extends AcmePlannerTest {
 	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/task/delete-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-    @Order(10)
+    @Order(47)
 	public void deletePositive(final int recordIndex, final String title, final String start, final String end, final String workload, final String description, final String optionalLink) {
 		
 		//Iniciamos sesion con el usuario de manager01
@@ -61,7 +61,7 @@ public class ManagerTaskDeleteTest extends AcmePlannerTest {
 	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/task/delete-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
-	@Order(10)
+	@Order(48)
 	public void deleteNegative(final int recordIndex, final String path, final String query) {
 		
 		super.navigate(path, query);

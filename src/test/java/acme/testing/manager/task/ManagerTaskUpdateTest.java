@@ -20,7 +20,7 @@ public class ManagerTaskUpdateTest extends AcmePlannerTest {
 	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/task/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-    @Order(10)
+    @Order(45)
 	public void updatePositive(final int recordIndex, final String title, final String start, final String end, final String workload, final String description, final String optionalLink) {
 		
 		//Iniciamos sesion con el usuario de manager01
@@ -77,7 +77,7 @@ public class ManagerTaskUpdateTest extends AcmePlannerTest {
 	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/task/update-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
-    @Order(10)
+    @Order(46)
 	public void updateNegative(final int recordIndex, final String title, final String start, final String end, final String workload, final String description, final String optionalLink) {
 		
 		//Iniciamos sesion con el usuario de manager01

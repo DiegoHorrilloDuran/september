@@ -14,7 +14,7 @@ public class AnonymousShoutCreateTest extends AcmePlannerTest {
 	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/anonymous/shout/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-    @Order(10)
+    @Order(13)
     public void createPositive(final int recordIndex, final String author, final String text, final String info) {
 		
 		super.clickOnMenu("Anonymous", "New shout");
@@ -36,7 +36,7 @@ public class AnonymousShoutCreateTest extends AcmePlannerTest {
 	 */		
 	@ParameterizedTest
 	@CsvFileSource(resources = "/anonymous/shout/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
-	@Order(10)
+	@Order(14)
 	public void createNegative(final int recordIndex, final String author, final String text, final String info) {
 			
 		super.clickOnMenu("Anonymous", "New shout");

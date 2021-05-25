@@ -11,7 +11,7 @@ public class ManagerTaskListTest extends AcmePlannerTest{
 	
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/task/listTask.csv", encoding = "utf-8", numLinesToSkip = 1)
-    @Order(10)
+    @Order(42)
     public void listManagerTasks(final int recordIndex, final String title, final String start, 
     	final String end, final String workload, final String description, final String optionalLink, final String privacy) {
 		super.signIn("manager01","manager01");
@@ -39,7 +39,7 @@ public class ManagerTaskListTest extends AcmePlannerTest{
 	*/
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/task/list-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
-	@Order(10)
+	@Order(43)
 	public void listAllNegative(final int recordIndex, final String path) {
 		super.signIn("manager01", "manager01");
 		super.navigateTo(path);
