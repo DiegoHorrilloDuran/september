@@ -17,7 +17,7 @@ public class ManagerTaskDeleteTest extends AcmePlannerTest {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/task/delete-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
     @Order(10)
-	public void createPositive(final int recordIndex, final String title, final String start, final String end, final String workload, final String description) {
+	public void deletePositive(final int recordIndex, final String title, final String start, final String end, final String workload, final String description, final String optionalLink) {
 		
 		//Iniciamos sesion con el usuario de manager01
 		super.signIn("manager01", "manager01");
@@ -48,10 +48,24 @@ public class ManagerTaskDeleteTest extends AcmePlannerTest {
 		super.checkInputBoxHasValue("end", end);
 		super.checkInputBoxHasValue("workload", workload);
 		super.checkInputBoxHasValue("description", description);
+		super.checkInputBoxHasValue("optionalLink", optionalLink);
 		
 		//Salimos de la sesion
 		super.signOut();
 		
+	}
+	
+	/*
+	 * CASO NEGATIVO: Intentamos entrar en un enlace de manager sin estar autenticados e intentamos borrar la tarea de ese manager.
+	 * Al no haber iniciado sesión, saltará un error de que no podemos acceder a esa tarea para borrarla siendo anonimo.
+	 */
+	@ParameterizedTest
+	@CsvFileSource(resources = "/manager/task/delete-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@Order(10)
+	public void deleteNegative(final int recordIndex, final String path, final String query) {
+		
+		super.navigate(path, query);
+		super.checkErrorsExist();
 	}
 
 }
