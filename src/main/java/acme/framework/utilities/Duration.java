@@ -4,6 +4,10 @@ import java.util.Date;
 
 public class Duration {
 	
+	private Duration() {
+		
+	}
+	
 	public static Double getDuration(final Date eStart, final Date eEnd) {
 		 Double res = null;
 		 
@@ -22,7 +26,7 @@ public class Duration {
 	 }
 	
 	public static Double correctPeriod(final Double period) {
-		Double res = new Double(period);
+		Double res = period;
 
 		final Double dec = res - res.intValue();
 		if (dec >= .6) {

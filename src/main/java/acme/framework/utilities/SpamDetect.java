@@ -7,6 +7,10 @@ import acme.framework.entities.CustomisationParameter;
 
 public class SpamDetect {
 	
+	private SpamDetect() {
+		
+	}
+	
 	public static boolean isSpamText(final String textToCheck, final CustomisationParameter params) {
         boolean result = false;
         Double numSpWordsInText = 0.;
