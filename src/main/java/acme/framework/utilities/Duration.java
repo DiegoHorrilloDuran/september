@@ -27,10 +27,11 @@ public class Duration {
 	
 	public static Double correctPeriod(final Double period) {
 		Double res = period;
-
-		final Double dec = res - res.intValue();
-		if (dec >= .6) {
-			res = res + 1 - .6;
+		if(res!=null) {
+			final Double dec = res - res.intValue();
+			if (dec >= .6) {
+				res = res + 1 - .6;
+			}
 		}
 
 		return res;
