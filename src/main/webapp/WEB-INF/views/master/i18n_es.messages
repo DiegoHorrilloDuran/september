@@ -31,7 +31,7 @@ master.menu.sign-out = Salir
 master.menu.anonymous = Anónimo
 master.menu.anonymous.shout.list = Gritos
 master.menu.anonymous.shout.form = Nuevo grito
-master.menu.anonymous.task = Tareas
+master.menu.anonymous.task = Tareas no finalizadas
 
 
 # master.menu.administrator ###################################################
@@ -47,12 +47,12 @@ master.menu.administrator.shutdown = Parar el sistema
 # master.menu.authenticated ########################################################
 
 master.menu.authenticated = Autenticado
-master.menu.authenticated.task = Tareas públicas
+master.menu.authenticated.task = Tareas públicas finalizadas
 
 # master.menu.manager ########################################################
 
 master.menu.manager = Manager
-master.menu.manager.task.list = Tareas del manager
+master.menu.manager.task.list = Tareas del manager no terminadas
 master.menu.manager.task.create = Crear tarea
 
 # master.menu.provider ########################################################
