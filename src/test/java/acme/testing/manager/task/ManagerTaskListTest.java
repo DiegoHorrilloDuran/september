@@ -15,7 +15,7 @@ public class ManagerTaskListTest extends AcmePlannerTest{
     public void listManagerTasks(final int recordIndex, final String title, final String start, 
     	final String end, final String workload, final String description, final String optionalLink, final String privacy) {
 		super.signIn("manager01","manager01");
-		super.clickOnMenu("Manager", "Manager tasks");
+		super.clickOnMenu("Manager", "Manager non-finished tasks");
 		
 		super.checkColumnHasValue(recordIndex, 0, title);
 		super.checkColumnHasValue(recordIndex, 1, start);

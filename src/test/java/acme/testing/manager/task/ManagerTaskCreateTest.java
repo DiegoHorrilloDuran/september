@@ -36,7 +36,7 @@ public class ManagerTaskCreateTest extends AcmePlannerTest {
 		
 		super.clickOnSubmitButton("Create"); //creamos la tarea
 		
-		super.clickOnMenu("Manager", "Manager tasks"); //nos vamos ahora al listado de todas las tareas del manager
+		super.clickOnMenu("Manager", "Manager non-finished tasks"); //nos vamos ahora al listado de todas las tareas del manager
 		
 		//Comprueba en el listado que existe un objeto con dichos valores
 		super.checkColumnHasValue(recordIndex, 0, title);

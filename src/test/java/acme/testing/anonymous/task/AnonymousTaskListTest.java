@@ -20,7 +20,7 @@ public class AnonymousTaskListTest extends AcmePlannerTest{
 		
 	//Testeamos el list	
 		
-		super.clickOnMenu("Anonymous", "Tasks");
+		super.clickOnMenu("Anonymous", "Non-finished tasks");
 		
 		super.checkColumnHasValue(recordIndex, 0, title);
 		super.checkColumnHasValue(recordIndex, 1, start);

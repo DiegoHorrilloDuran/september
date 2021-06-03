@@ -23,14 +23,14 @@ public class ManagerTaskDeleteTest extends AcmePlannerTest {
 		super.signIn("manager01", "manager01");
 		
 		//clicamos en la lista de tareas del manager
-		super.clickOnMenu("Manager", "Manager tasks");
+		super.clickOnMenu("Manager", "Manager non-finished tasks");
 		
 		//Clicamos en la tarea especifica para ver los detalles de la tarea que vamos a borrar
 		super.clickOnListingRecord(recordIndex);
 	
 		super.clickOnSubmitButton("Delete"); //le damos al boton para borrar la tarea
 		
-		super.clickOnMenu("Manager", "Manager tasks"); //nos vamos ahora al listado de todas las tareas del manager
+		super.clickOnMenu("Manager", "Manager non-finished tasks"); //nos vamos ahora al listado de todas las tareas del manager
 		
 		//Comprueba en el listado que ya no existe la tarea borrada y. en su lugar, la tarea siguiente a la borrada
 		//ocupa ahora el lugar de la otra (por el número del índice). Comprobando que la tarea siguiente a la borrada
