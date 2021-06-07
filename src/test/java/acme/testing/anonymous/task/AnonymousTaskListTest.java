@@ -47,9 +47,10 @@ public class AnonymousTaskListTest extends AcmePlannerTest{
 			@CsvFileSource(resources = "/anonymous/task/list-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 			@Order(16)
 			public void listAllNegative(final int recordIndex, final String path) {
-							
+				super.signIn("administrator", "administrator");		
 				super.navigateTo(path);
 				super.checkErrorsExist();
+				super.signOut();
 			}
 
 }

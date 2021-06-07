@@ -27,7 +27,7 @@ public class ManagerTaskUpdateTest extends AcmePlannerTest {
 		super.signIn("manager01", "manager01");
 		
 		//clicamos en la lista de tareas del manager
-		super.clickOnMenu("Manager", "Manager non-finished tasks");
+		super.clickOnMenu("Manager", "Manager tasks");
 		
 		//Clicamos en la tarea especifica para ver los detalles de la tarea que vamos a actualizar
 		super.clickOnListingRecord(recordIndex);
@@ -42,7 +42,7 @@ public class ManagerTaskUpdateTest extends AcmePlannerTest {
 		
 		super.clickOnSubmitButton("Update"); //le damos al boton para actualizar la tarea
 		
-		super.clickOnMenu("Manager", "Manager non-finished tasks"); //nos vamos ahora al listado de todas las tareas del manager
+		super.clickOnMenu("Manager", "Manager tasks"); //nos vamos ahora al listado de todas las tareas del manager
 		
 		//Comprueba en el listado que existe un objeto con dichos valores
 		super.checkColumnHasValue(recordIndex, 0, title);
@@ -84,7 +84,7 @@ public class ManagerTaskUpdateTest extends AcmePlannerTest {
 		super.signIn("manager01", "manager01");
 		
 		//clicamos en la lista de tareas del manager
-		super.clickOnMenu("Manager", "Manager non-finished tasks");
+		super.clickOnMenu("Manager", "Manager tasks");
 		
 		//Clicamos en la tarea especifica para ver los detalles de la tarea que vamos a actualizar
 		super.clickOnListingRecord(recordIndex);
