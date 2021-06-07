@@ -71,7 +71,7 @@ public abstract class AcmePlannerTest extends AcmeTest{
 		this.navigate(() -> {
 			String url;
 
-			url = String.format("%s/%s", this.baseUrl, path);
+			url = String.format("%s%s", this.baseUrl, path);
 			this.driver.get(url);
 			this.longSleep();
 		});
