@@ -52,7 +52,7 @@ master.menu.authenticated.task = Finished public tasks
 # master.menu.manager ########################################################
 
 master.menu.manager = Manager
-master.menu.manager.task.list = Manager non-finished tasks
+master.menu.manager.task.list = Manager tasks
 master.menu.manager.task.create = Create task
 
 # master.menu.user-account ####################################################

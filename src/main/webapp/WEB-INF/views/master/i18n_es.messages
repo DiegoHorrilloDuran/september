@@ -52,7 +52,7 @@ master.menu.authenticated.task = Tareas públicas finalizadas
 # master.menu.manager ########################################################
 
 master.menu.manager = Manager
-master.menu.manager.task.list = Tareas del manager no terminadas
+master.menu.manager.task.list = Tareas del manager
 master.menu.manager.task.create = Crear tarea
 
 # master.menu.user-account ####################################################
