@@ -27,9 +27,12 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 	@Override
 	public boolean authorise(final Request<Task> request) {
 		assert request != null;
+		final int id = request.getModel().getInteger("id");
+		final Task task = this.repository.findOneTaskById(id);
+		final int idManager = task.getIdmanager();   //idManager es el Id del UsserAccount del manager que ha creado la tarea.
+		final int currentId = request.getPrincipal().getAccountId();
 
-		return true;
-		
+		return currentId == idManager;
 	}
 
 	@Override
