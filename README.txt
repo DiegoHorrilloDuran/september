@@ -8,10 +8,10 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-This is the Acme Planner project. A development made by students of of the University of Seville.
+This is the Acme-Work-Plans project. A development made by students of of the University of Seville.
 
 REPOSITORY
-https://github.com/DiegoHorrilloDuran/Acme-Planner
+https://github.com/DiegoHorrilloDuran/Acme-Work-Plans-D04
 
 DEPLOYED APP LINK
-http://app-7020b4bf-5d70-4b53-9100-a313e9bb7309.cleverapps.io
+
