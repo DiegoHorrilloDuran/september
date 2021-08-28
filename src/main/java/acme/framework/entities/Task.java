@@ -43,6 +43,7 @@ public class Task extends DomainEntity {
 	 protected LocalDate		end;
 	 
 	 @NotNull
+	 @Digits(integer = 2, fraction = 2)
 	 @Positive
 	 protected Double	workload;
 	 
