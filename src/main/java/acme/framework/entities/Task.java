@@ -1,10 +1,13 @@
 package acme.framework.entities;
 
-import java.time.LocalDate;
+
+
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
@@ -36,11 +39,11 @@ public class Task extends DomainEntity {
 	 
 	 @NotNull
 	 @Temporal(TemporalType.TIMESTAMP)
-	 protected LocalDate		start;
+	 protected Date		start;
 	 
 	 @NotNull
 	 @Temporal(TemporalType.TIMESTAMP)
-	 protected LocalDate		end;
+	 protected Date		end;
 	 
 	 @NotNull
 	 @Digits(integer = 2, fraction = 2)
