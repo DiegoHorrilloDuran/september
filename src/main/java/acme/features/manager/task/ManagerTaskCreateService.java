@@ -72,19 +72,9 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		assert errors != null;
 
 		final Date ahora = Date.from(Instant.now());
-		Double wl = entity.getWorkload();
-		if (wl != null) {
-			wl = Duration.correctPeriod(wl);
-		}
+		final Double wl = entity.getWorkload();
+		
 
-		if (!errors.hasErrors("start") && !errors.hasErrors("end")) {
-			errors.state(request, !entity.getStart().before(ahora), "start", "manager.task.error.fechainicio");
-			errors.state(request, entity.getStart().before(entity.getEnd()), "end", "manager.task.error.fechafin");
-		}
-
-		if (!errors.hasErrors("start") && !errors.hasErrors("end") && !errors.hasErrors("workload")) {
-			errors.state(request, wl <= entity.getExecutionPeriod(), "workload", "manager.task.error.workload");
-		}
 
 		final CustomisationParameter params = this.repository.findSpam().get(0);
 
@@ -98,6 +88,19 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		
 		if (!errors.hasErrors("optionalLink")) {
 			errors.state(request, !SpamDetect.isSpamText(entity.getOptionalLink(), params), "optionalLink", "manager.task.error.spam");
+		}
+		
+		if (!errors.hasErrors("start") && !errors.hasErrors("end")) {
+			errors.state(request, !entity.getStart().before(ahora), "start", "manager.task.error.fechainicio");
+			errors.state(request, entity.getStart().before(entity.getEnd()), "end", "manager.task.error.fechafin");
+		}
+
+		if (!errors.hasErrors("start") && !errors.hasErrors("end") && !errors.hasErrors("workload")) {
+			errors.state(request, (wl-wl.intValue())<.6, "workload", "manager.task.error.workload.format");
+		}
+		
+		if (!errors.hasErrors("start") && !errors.hasErrors("end") && !errors.hasErrors("workload")) {
+			errors.state(request, wl <= entity.getExecutionPeriod(), "workload", "manager.task.error.workload.period");
 		}
 
 	}
