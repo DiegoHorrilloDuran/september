@@ -2,7 +2,8 @@ package acme.features.manager.task;
 
 
 
-import java.time.LocalDate;
+import java.time.Instant;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -73,15 +74,15 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		assert entity != null;
 		assert errors != null;
 		
-		final LocalDate ahora = LocalDate.now();
+		final Date ahora = java.util.Date.from(Instant.now());
 		Double wl = entity.getWorkload();
 		if (wl != null) {
 			wl = Duration.correctPeriod(wl);
 		}
 
 		if (!errors.hasErrors("start") && !errors.hasErrors("end")) {
-			errors.state(request, !entity.getStart().isBefore(ahora), "start", "manager.task.error.fechainicio");
-			errors.state(request, entity.getStart().isBefore(entity.getEnd()), "end", "manager.task.error.fechafin");
+			errors.state(request, !entity.getStart().before(ahora), "start", "manager.task.error.fechainicio");
+			errors.state(request, entity.getStart().before(entity.getEnd()), "end", "manager.task.error.fechafin");
 		}
 
 		if (!errors.hasErrors("start") && !errors.hasErrors("end") && !errors.hasErrors("workload")) {
@@ -110,15 +111,15 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		assert entity != null;
 		
 		String title;
-		LocalDate start;
-		LocalDate end;
+		Date start;
+		Date end;
 		Double workload;
 		String description;
 		Boolean privacy;
 		
 		title = request.getModel().getString("title");
-		start = request.getModel().getLocalDate("start");
-		end = request.getModel().getLocalDate("end");
+		start = request.getModel().getDate("start");
+		end = request.getModel().getDate("end");
 		workload = request.getModel().getDouble("workload");
 		description = request.getModel().getString("description");
 		privacy = request.getModel().getBoolean("privacy");
