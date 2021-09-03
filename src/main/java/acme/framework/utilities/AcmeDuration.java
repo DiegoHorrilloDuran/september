@@ -8,6 +8,7 @@ public class AcmeDuration {
 		
 	}
 	
+	//This method find the period between two Dates in format [hours.minutes]
 	public static Double getDuration(final Date eStart, final Date eEnd) {
 		 
 		 final long diff = Math.abs(eStart.getTime() - eEnd.getTime());
