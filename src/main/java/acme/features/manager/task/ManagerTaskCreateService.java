@@ -15,7 +15,6 @@ import acme.framework.entities.CustomisationParameter;
 import acme.framework.entities.Manager;
 import acme.framework.entities.Task;
 import acme.framework.services.AbstractCreateService;
-import acme.framework.utilities.Duration;
 import acme.framework.utilities.SpamDetect;
 
 @Service
@@ -111,8 +110,6 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		assert entity != null;
 
 		final Double wl = request.getModel().getDouble("workload");
-
-		entity.setWorkload(Duration.correctPeriod(wl));
 
 		this.repository.save(entity);
 	}

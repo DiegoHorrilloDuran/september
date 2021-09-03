@@ -15,7 +15,6 @@ import acme.framework.entities.CustomisationParameter;
 import acme.framework.entities.Manager;
 import acme.framework.entities.Task;
 import acme.framework.services.AbstractUpdateService;
-import acme.framework.utilities.Duration;
 import acme.framework.utilities.SpamDetect;
 
 @Service
@@ -132,7 +131,7 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		entity.setTitle(title);
 		entity.setStart(start);
 		entity.setEnd(end);
-		entity.setWorkload(Duration.correctPeriod(workload));
+		entity.setWorkload(workload);
 		entity.setDescription(description);
 		entity.setPrivacy(privacy);
 		

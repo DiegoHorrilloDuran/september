@@ -15,7 +15,7 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.URL;
 
-import acme.framework.utilities.Duration;
+import acme.framework.utilities.AcmeDuration;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -66,6 +66,6 @@ public class Task extends DomainEntity {
 	 //Derived Attributes
 	 
 	 public Double getExecutionPeriod() {
-		 return Duration.getDuration(this.start, this.end);
+		 return AcmeDuration.getDuration(this.start, this.end);
 	 }
 }
