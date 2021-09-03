@@ -31,15 +31,10 @@ public class AcmeDuration {
 	
 	public static Double doPeriod(final long period) {
 		final Double res;
-		System.out.println("period: "+period);
 		final Double div = (double) period/60;
-		System.out.println("div: "+div);
 		final int entero = div.intValue();
-		System.out.println("entero: "+entero);
 		final Double decimal = (double)(period - (entero*60))/100;
-		System.out.println("decimal: "+decimal);
 		res = entero+decimal;
-		System.out.println("res: "+res);
 
 		return res;
 	}
