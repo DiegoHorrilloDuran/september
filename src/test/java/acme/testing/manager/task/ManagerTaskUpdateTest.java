@@ -4,13 +4,13 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
 /*
  * En este test vamos a comprobar tanto el caso positivo de la actualizacion de una task del manager como los 
  * diferentes casos negativos que pueden ocurrir durante la actualizacion de una task.
  */
-public class ManagerTaskUpdateTest extends AcmePlannerTest {
+public class ManagerTaskUpdateTest extends AcmeWorkPlansTest {
 	
 	/*
 	 * CASO POSITIVO: Los diferentes casos positivos a tratar son:
