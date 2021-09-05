@@ -72,8 +72,6 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 
 		final Date ahora = Date.from(Instant.now());
 		final Double wl = entity.getWorkload();
-		
-System.out.println(wl+" - "+ wl.intValue()+ " = "+ (wl-wl.intValue()));
 
 		final CustomisationParameter params = this.repository.findSpam().get(0);
 
