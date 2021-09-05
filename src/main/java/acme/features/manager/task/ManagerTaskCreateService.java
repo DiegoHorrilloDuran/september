@@ -72,8 +72,6 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 
 		final Date ahora = Date.from(Instant.now());
 		final Double wl = entity.getWorkload();
-		
-
 
 		final CustomisationParameter params = this.repository.findSpam().get(0);
 
@@ -95,7 +93,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		}
 
 		if (!errors.hasErrors("start") && !errors.hasErrors("end") && !errors.hasErrors("workload")) {
-			errors.state(request, (wl-wl.intValue())<.6, "workload", "manager.task.error.workload.format");
+			errors.state(request, (wl-wl.intValue())<.599, "workload", "manager.task.error.workload.format");
 		}
 		
 		if (!errors.hasErrors("start") && !errors.hasErrors("end") && !errors.hasErrors("workload")) {
@@ -108,8 +106,6 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 	public void create(final Request<Task> request, final Task entity) {
 		assert request != null;
 		assert entity != null;
-
-		final Double wl = request.getModel().getDouble("workload");
 
 		this.repository.save(entity);
 	}

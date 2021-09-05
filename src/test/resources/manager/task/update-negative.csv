@@ -11,7 +11,7 @@ recordIndex,title,start,end,workload,description,optionalLink
 0,TareaTESTWorkloadDeltaNegativo,2021/11/25 00:00,2021/11/25 01:00,-0.01,esto es algo,
 0,TareaTESTWorkload0,2021/11/09 00:00,2021/11/09 00:01,0.00,esto es algo,
 0,TareaTESTWorkload,2021/11/09 00:00,2021/11/09 01:00,1.01,esto es algo,
-0,TareaTESTWorkload,2021/11/09 00:00,2021/11/13 04:00,100.0,esto es algo,
+0,TareaTESTWorkload,2021/11/09 00:00,2021/11/13 04:00,100.00,esto es algo,
 0,TareaTESTWorkload,2021/11/09 00:00,2021/11/13 04:00,99.60,esto es algo,
 0,TareaTESTWorkload,2021/11/09 00:00,2021/11/09 00:01,0.001,esto es algo,
 0,TareaTEST5DescripcionVacia,2021/07/10 00:00,2021/07/10 01:00,1.00,,
