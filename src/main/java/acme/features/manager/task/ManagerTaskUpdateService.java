@@ -76,7 +76,7 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		final Date ahora = Date.from(Instant.now());
 		final Double wl = entity.getWorkload();
 		
-
+		System.out.println(wl+" - "+ wl.intValue()+ " = "+ (wl-wl.intValue()));
 
 		final CustomisationParameter params = this.repository.findSpam().get(0);
 
@@ -98,7 +98,7 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		}
 
 		if (!errors.hasErrors("start") && !errors.hasErrors("end") && !errors.hasErrors("workload")) {
-			errors.state(request, (wl-wl.intValue())<.6, "workload", "manager.task.error.workload.format");
+			errors.state(request, (wl-wl.intValue())<.599, "workload", "manager.task.error.workload.format");
 		}
 		
 		if (!errors.hasErrors("start") && !errors.hasErrors("end") && !errors.hasErrors("workload")) {
