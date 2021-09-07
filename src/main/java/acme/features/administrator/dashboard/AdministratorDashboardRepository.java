@@ -9,6 +9,27 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AdministratorDashboardRepository extends AbstractRepository {
 
+	@Query("select count(s) from Shout s")
+	Integer getNumberOfShouts();
+	
+	@Query("select count(s) from Shout s where s.xxxis.xxx4 = true")
+	Integer getQuery1();
+	
+	@Query("select count(s) from Shout s where s.xxxis.xxx3.currency = 'EUR'")
+	Integer getQuery2();
+	
+	@Query("select avg(s.xxxis.xxx3.amount) from Shout s where s.xxxis.xxx3.currency = 'EUR'")
+	Double getAvg3();
+	
+	@Query("select stddev(s.xxxis.xxx3.amount) from Shout s where s.xxxis.xxx3.currency = 'EUR'")
+	Double getStdDev4();
+	
+	@Query("select avg(s.xxxis.xxx3.amount) from Shout s where s.xxxis.xxx3.currency = 'USD'")
+	Double getAvg5();
+	
+	@Query("select stddev(s.xxxis.xxx3.amount) from Shout s where s.xxxis.xxx3.currency = 'USD'")
+	Double getStdDev6();
+	
 	@Query("select count(t) from Task t")
 	Integer getNumberOfTasks();
 	

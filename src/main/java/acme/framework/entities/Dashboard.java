@@ -12,6 +12,12 @@ public class Dashboard implements Serializable {
 
 	private static final long	serialVersionUID	= 1L;
 
+	String						ratio1;
+	String						ratio2;
+	Double						avg3;
+	Double						stddev4;
+	Double						avg5;
+	Double						stddev6;
 	Integer						numberOfTasks;
 	Integer						numberOfPrivateTasks;
 	Integer						numberOfFinishedTasks;

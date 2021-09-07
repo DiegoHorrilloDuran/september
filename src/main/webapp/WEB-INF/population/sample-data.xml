@@ -20,6 +20,112 @@
 	<import resource="classpath:/WEB-INF/population/conversion-service.xml"/>	
 
 
+	<!-- Xxxis -->
+
+	<bean name="xxxis01" class="acme.framework.entities.Xxxis">
+		<property name="xxx1" value="01/02/2022" />
+		<property name="xxx2" value="2022/02/01 15:00" />
+		<property name="xxx3">
+			<bean class="acme.framework.datatypes.Money">
+				<property name="amount" value="10.22" />
+				<property name="currency" value="USD" />
+			</bean>
+		</property>
+		<property name="xxx4" value="true" />
+		
+	</bean>
+	
+	<bean name="xxxis02" class="acme.framework.entities.Xxxis">
+		<property name="xxx1" value="02/02/2022" />
+		<property name="xxx2" value="2022/02/02 15:00" />
+		<property name="xxx3">
+			<bean class="acme.framework.datatypes.Money">
+				<property name="amount" value="200.50" />
+				<property name="currency" value="EUR" />
+			</bean>
+		</property>
+		<property name="xxx4" value="true" />
+		
+	</bean>
+	
+	<bean name="xxxis03" class="acme.framework.entities.Xxxis">
+		<property name="xxx1" value="02/02/2022" />
+		<property name="xxx2" value="2022/03/02 15:00" />
+		<property name="xxx3">
+			<bean class="acme.framework.datatypes.Money">
+				<property name="amount" value="50.99" />
+				<property name="currency" value="USD" />
+			</bean>
+		</property>
+		<property name="xxx4" value="true" />
+		
+	</bean>
+	
+	<bean name="xxxis04" class="acme.framework.entities.Xxxis">
+		<property name="xxx1" value="02/02/2022" />
+		<property name="xxx2" value="2022/04/02 15:00" />
+		<property name="xxx3">
+			<bean class="acme.framework.datatypes.Money">
+				<property name="amount" value="0.01" />
+				<property name="currency" value="EUR" />
+			</bean>
+		</property>
+		<property name="xxx4" value="true" />
+		
+	</bean>
+	
+	<bean name="xxxis05" class="acme.framework.entities.Xxxis">
+		<property name="xxx1" value="02/02/2022" />
+		<property name="xxx2" value="2022/05/02 15:00" />
+		<property name="xxx3">
+			<bean class="acme.framework.datatypes.Money">
+				<property name="amount" value="100.00" />
+				<property name="currency" value="USD" />
+			</bean>
+		</property>
+		<property name="xxx4" value="true" />
+		
+	</bean>
+	
+	<bean name="xxxis06" class="acme.framework.entities.Xxxis">
+		<property name="xxx1" value="02/02/2022" />
+		<property name="xxx2" value="2022/06/02 15:00" />
+		<property name="xxx3">
+			<bean class="acme.framework.datatypes.Money">
+				<property name="amount" value="1750.50" />
+				<property name="currency" value="EUR" />
+			</bean>
+		</property>
+		<property name="xxx4" value="false" />
+		
+	</bean>
+	
+	<bean name="xxxis07" class="acme.framework.entities.Xxxis">
+		<property name="xxx1" value="02/02/2022" />
+		<property name="xxx2" value="2022/06/02 15:00" />
+		<property name="xxx3">
+			<bean class="acme.framework.datatypes.Money">
+				<property name="amount" value="500.80" />
+				<property name="currency" value="USD" />
+			</bean>
+		</property>
+		<property name="xxx4" value="false" />
+		
+	</bean>
+	
+	<bean name="xxxis08" class="acme.framework.entities.Xxxis">
+		<property name="xxx1" value="02/02/2022" />
+		<property name="xxx2" value="2022/07/02 15:00" />
+		<property name="xxx3">
+			<bean class="acme.framework.datatypes.Money">
+				<property name="amount" value="208.70" />
+				<property name="currency" value="EUR" />
+			</bean>
+		</property>
+		<property name="xxx4" value="false" />
+		
+	</bean>
+
 	<!-- Managers -->
 	
 	<bean name="manager01UserAccount" class="acme.framework.entities.UserAccount">
@@ -274,6 +380,7 @@
 	<property name="author" value="John Doe"/>
 	<property name="text"   value="Im Happy"/>
 	<property name="info"> <null/> </property>
+	<property name="xxxis" ref="xxxis01"/>
 </bean>
 
 <bean id="shout02" class="acme.framework.entities.Shout">
@@ -281,6 +388,7 @@
 	<property name="author" value="Jane Doe"/>
 	<property name="text"   value="Im Sad"/>
 	<property name="info" value="http://www.example.org"/>
+	<property name="xxxis" ref="xxxis02"/>
 </bean>
 
 <bean id="shout03" class="acme.framework.entities.Shout">
@@ -288,6 +396,7 @@
 	<property name="author" value="Antonio José"/>
 	<property name="text"   value="Ostia tío que no lo he enchufado"/>
 	<property name="info" value="http://www.aeromodelismo.com/"/>
+	<property name="xxxis" ref="xxxis03"/>
 </bean>
 
 <bean id="shout04" class="acme.framework.entities.Shout">
@@ -295,6 +404,7 @@
 	<property name="author" value="Manuel Ruiz de Lopera"/>
 	<property name="text"   value="Me estais exigiendo que me estais cansando"/>
 	<property name="info"> <null/> </property>
+	<property name="xxxis" ref="xxxis04"/>
 </bean>
 
 <bean id="shout05" class="acme.framework.entities.Shout">
@@ -302,6 +412,7 @@
 	<property name="author" value="Manuel Ruiz de Lopera"/>
 	<property name="text"   value="Aquí tenéis la caja de herramientas"/>
 	<property name="info"> <null/> </property>
+	<property name="xxxis" ref="xxxis05"/>
 </bean>
 
 <bean id="shout06" class="acme.framework.entities.Shout">
@@ -309,6 +420,7 @@
 	<property name="author" value="Antonio Bermejo"/>
 	<property name="text"   value="Tengo sueño"/>
 	<property name="info"> <null/> </property>
+	<property name="xxxis" ref="xxxis06"/>
 </bean>
 
 <bean id="shout07" class="acme.framework.entities.Shout">
@@ -316,6 +428,7 @@
 	<property name="author" value="Carlos Ruiz"/>
 	<property name="text"   value="Buenos días"/>
 	<property name="info"> <null/> </property>
+	<property name="xxxis" ref="xxxis07"/>
 </bean>
 
 <bean id="shout08" class="acme.framework.entities.Shout">
@@ -323,13 +436,8 @@
 	<property name="author" value="John Smith"/>
 	<property name="text"   value="Im Sad"/>
 	<property name="info" value="http://www.example.org"/>
+	<property name="xxxis" ref="xxxis08"/>
 </bean>
 
-<bean id="shout09" class="acme.framework.entities.Shout">
-	<property name="moment" value="2021/08/30 15:30"/>
-	<property name="author" value="Billie Eilish"/>
-	<property name="text"   value="Im Sad"/>
-	<property name="info" value="http://www.example.org"/>
-</bean>
 
 </beans>

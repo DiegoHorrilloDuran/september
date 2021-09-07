@@ -3,13 +3,35 @@ anonymous.shout.list.label.moment = Moment
 anonymous.shout.list.label.author = Author
 anonymous.shout.list.label.text = Text
 anonymous.shout.list.label.info = Information
+anonymous.shout.list.label.xxx1 = Xxx1
+anonymous.shout.list.label.xxx2 = Xxx2
+anonymous.shout.list.label.xxx3 = Xxx3
+anonymous.shout.list.label.xxx4 = Xxx4
 
 #Form
 anonymous.shout.form.label.author = Author
 anonymous.shout.form.label.text = Text
 anonymous.shout.form.label.info = Information
+
+anonymous.shout.form.label.xxx1 = Xxx1
+anonymous.shout.form.label.xxx2 = Xxx2
+anonymous.shout.form.label.xxx3.currency = Currency
+anonymous.shout.form.label.xxx3.amount = Amount
+anonymous.shout.form.label.xxx4 = Xxx4
+
 anonymous.shout.form.button.create = Shout!
 anonymous.shout.form.button.return = Return
 
 #Spam
 anonymous.shout.error.spam = Text detected as Spam
+anonymous.shout.error.xxxis.xxx1 = Must not be Blank
+anonymous.shout.error.xxxis.xxx1-pattern = You have to match the pattern in the placeholder
+anonymous.shout.error.xxxis.xxx2 = Must not be null
+anonymous.shout.error.xxxis.xxx2.date.future = this date must be in future
+anonymous.shout.error.xxxis.xxx2.date.week = Has to be more than a week
+anonymous.shout.error.xxxis.xxx3.currency = Must not be null
+anonymous.shout.error.xxxis.xxx3.currency-only = You only can take the currency in the placeholder
+anonymous.shout.error.xxxis.xxx3.amount = Must not be null
+anonymous.shout.error.xxxis.xxx3.amount.positive = Value must be > 0
+anonymous.shout.error.xxxis.xxx3.amount.digits = Must have 10 digits and 2 decimals
+anonymous.shout.error.xxxis.xxx4 = Must not be null

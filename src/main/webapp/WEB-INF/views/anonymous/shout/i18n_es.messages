@@ -3,13 +3,35 @@ anonymous.shout.list.label.moment = Momento
 anonymous.shout.list.label.author = Autor
 anonymous.shout.list.label.text = Texto
 anonymous.shout.list.label.info = Información
+anonymous.shout.list.label.xxx1 = Xxx1
+anonymous.shout.list.label.xxx2 = Xxx2
+anonymous.shout.list.label.xxx3 = Xxx3
+anonymous.shout.list.label.xxx4 = Xxx4
 
 #Formulario
 anonymous.shout.form.label.author = Autor
 anonymous.shout.form.label.text = Texto
 anonymous.shout.form.label.info = Información
+
+anonymous.shout.form.label.xxx1 = Xxx1
+anonymous.shout.form.label.xxx2 = Xxx2
+anonymous.shout.form.label.xxx3.currency = Moneda
+anonymous.shout.form.label.xxx3.amount = Cantidad
+anonymous.shout.form.label.xxx4 = Xxx4
+
 anonymous.shout.form.button.create = Gritar
 anonymous.shout.form.button.return = Volver
 
 #Spam
 anonymous.shout.error.spam = Texto detectado como Spam
+anonymous.shout.error.xxxis.xxx1 = No puede estar en blanco
+anonymous.shout.error.xxxis.xxx1-pattern = Debe respetarse el patrón dado en el placeholder
+anonymous.shout.error.xxxis.xxx2 = No puede ser nulo
+anonymous.shout.error.xxxis.xxx2.date.future = Esta fecha debe ser futura
+anonymous.shout.error.xxxis.xxx2.date.week = Debe ser mas de una semana
+anonymous.shout.error.xxxis.xxx3.currency = No puede ser nulo
+anonymous.shout.error.xxxis.xxx3.currency-only = Debe elegir entre las divisas dadas en el placeholder
+anonymous.shout.error.xxxis.xxx3.amount = No puede ser nulo
+anonymous.shout.error.xxxis.xxx3.amount.positive = El valor debe ser > 0
+anonymous.shout.error.xxxis.xxx3.amount.digits = Debe tener 10 digitos y 2 decimales
+anonymous.shout.error.xxxis.xxx4 = No puede ser nulo

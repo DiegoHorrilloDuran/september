@@ -1,6 +1,10 @@
-recordIndex,author,text,info
-6,MariCarmen,Hola mundo,http://www.example.com
-7,Carlos,Adios Mundo,
-8,Maria,Hola mundo,http://www.example.com
-9,MariaMariaMariaMariaMaria,Hola mundo,http://www.example.com
-10,Manolo,HolasMundoHolasMundoHolasMundoHolasMundoHolasMundoHolasMundoHolasMundoHolasMundoHolasMundoHolasMundo,http://www.example.com
+recordIndex,author,text,info,xxx1,xxx2,currency,amount,xxx4
+8,MariCarmen,Hola mundo,http://www.example.com,22/01/2020,01/09/2022 15:35,EUR,21.21,true
+9,Carlos,Adios Mundo,,22/01/2020,01/09/2022 15:35,EUR,21.21,true
+10,Maria,Hola mundo,http://www.example.com,22/01/2020,01/09/2022 15:35,EUR,21.21,true
+11,MariaMariaMariaMariaMaria,Hola mundo,http://www.example.com,22/01/2020,01/09/2022 15:35,EUR,21.21,true
+12,Manolo,HolasMundoHolasMundoHolasMundoHolasMundoHolasMundoHolasMundoHolasMundoHolasMundoHolasMundoHolasMundo,http://www.example.com,22/01/2020,01/09/2022 15:35,EUR,21.21,true
+13,Mario,Shout,,01/01/1900,01/09/2022 15:35,EUR,0.01,true
+14,Mario,Shout,,31/12/2099,01/09/2022 15:35,EUR,0.01,true
+15,Mario,Shout,,01/01/1900,01/09/2022 15:35,USD,0.01,true
+16,Mario,Shout,,01/01/1900,01/09/2022 15:35,USD,0.01,true

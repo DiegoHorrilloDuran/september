@@ -16,6 +16,12 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form readonly="true">
+	<acme:form-textbox code="administrator.dashboard.form.label.ratio1" path="ratio1" />
+	<acme:form-textbox code="administrator.dashboard.form.label.ratio2" path="ratio2" />
+	<acme:form-textbox code="administrator.dashboard.form.label.avg3" path="avg3" />
+	<acme:form-textbox code="administrator.dashboard.form.label.stddev4" path="stddev4" />
+	<acme:form-textbox code="administrator.dashboard.form.label.avg5" path="avg5" />
+	<acme:form-textbox code="administrator.dashboard.form.label.stddev6" path="stddev6" />
 	<acme:form-textbox code="administrator.dashboard.form.label.numberOfPrivateTasks" path="numberOfPrivateTasks" />
 	<acme:form-textbox code="administrator.dashboard.form.label.numberOfPublicTasks" path="numberOfPublicTasks"/>
 	<acme:form-textbox code="administrator.dashboard.form.label.numberOfFinishedTasks" path="numberOfFinishedTasks"/>

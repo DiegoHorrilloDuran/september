@@ -1,12 +1,20 @@
-recordIndex,author,text,info
-0,,, 
-0,,Hola mundo,http://www.example.com
-0,rafa,Hola mundo,http://www.example.com
-0,AntonioAntonioAntonioooooo,Hola mundo,http://www.example.com
-0,AntonioLop, ,http://www.example.com
-0,AntonioLop,HolasMundoHolasMundoHolasMundoHolasMundoHolasMundoHolasMundoHolasMundoHolasMundoHolasMundoHolasMundoH,http://www.example.com
-0,Antonio, viagra,
-0,Antonio, viagra nigeria hola, http://www.example.com
-0,A, viagra, asp
-0,viagra,hola,
-0, , ,http://www.example.com
+recordIndex,author,text,info,xxx1,xxx2,currency,amount,xxx4,
+0,,,,,,,,false,
+0,,Hola mundo,http://www.example.com,01/01/1900,01/01/2022 11:00,EUR,0.01,true,
+0,rafa,Hola mundo,http://www.example.com,01/01/1900,01/01/2022 11:00,EUR,0.01,true,
+0,AntonioAntonioAntonioooooo,Hola mundo,http://www.example.com,01/01/1900,01/01/2022 11:00,EUR,0.01,true,
+0,AntonioLop,,http://www.example.com,01/01/1900,01/01/2022 11:00,EUR,0.01,true,
+0,AntonioLop,HolasMundoHolasMundoHolasMundoHolasMundoHolasMundoHolasMundoHolasMundoHolasMundoHolasMundoHolasMundoH,http://www.example.com,01/01/1900,01/01/2022 11:00,EUR,0.01,true,
+0,Antonio,viagra,,01/01/1900,01/01/2022 11:00,EUR,0.01,true,
+0,Antonio,viagra nigeria hola,http://www.example.com,01/01/1900,01/01/2022 11:00,EUR,0.01,true,
+0,A,viagra,asp,01/01/1900,01/01/2022 11:00,EUR,0.01,true,
+0,Mario,Shout,,,01/01/2022 11:00,EUR,0.01,true,
+0,Mario,Shout,,00/00/1900,01/01/2022 11:00,EUR,0.01,true,
+0,Mario,Shout,,01/01/1900,,EUR,0.01,true,
+0,Mario,Shout,,01/01/1900,01/01/2022 11:00,,0.01,true,
+0,Mario,Shout,,01/01/1900,01/01/2022 11:00,7,0.01,true,
+0,Mario,Shout,,01/01/1900,01/01/2022 11:00,eur,0.01,true,
+0,Mario,Shout,,01/01/1900,01/01/2022 11:00,EUR,,true,
+0,Mario,Shout,,01/01/1900,01/01/2022 11:00,EUR,-0.01,true,
+0,Mario,Shout,,01/01/1900,01/01/2022 11:00,EUR,0.001,true,
+0,Mario,Shout,,01/01/1900,01/01/2022 11:00,EUR,10000000000.01,true,

@@ -31,7 +31,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		final Integer pt = entity.numberOfPublicTasks();
 		final Integer ut = entity.numberOfUnfinishedTasks();
 		
-		request.unbind(entity, model, "numberOfTasks", "numberOfPrivateTasks", "numberOfFinishedTasks","maxTaskExecutionPeriod","minTaskExecutionPeriod","avgTaskExecutionPeriods","stdDevTaskExecutionPeriods","maxTaskWorkload","minTaskWorkload","avgTaskWorkloads","stdDevTaskWorkloads");
+		request.unbind(entity, model,"ratio1","ratio2","avg3","stddev4","avg5","stddev6", "numberOfTasks", "numberOfPrivateTasks", "numberOfFinishedTasks","maxTaskExecutionPeriod","minTaskExecutionPeriod","avgTaskExecutionPeriods","stdDevTaskExecutionPeriods","maxTaskWorkload","minTaskWorkload","avgTaskWorkloads","stdDevTaskWorkloads");
 		model.setAttribute("numberOfPublicTasks", pt);
 		model.setAttribute("numberOfUnfinishedTasks", ut);
 	}
@@ -39,7 +39,16 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 	@Override
 	public Dashboard findOne(final Request<Dashboard> request) {
 		final Dashboard dashboard = new Dashboard();
+		final Integer t = this.repository.getNumberOfShouts();
+		final Integer q1 = this.repository.getQuery1();
+		final Integer q2 = this.repository.getQuery2();
 		
+		dashboard.setRatio1(q1 + "/" + t);
+		dashboard.setRatio2(q2 + "/" + t);
+		dashboard.setAvg3(this.repository.getAvg3());
+		dashboard.setStddev4(this.repository.getStdDev4());
+		dashboard.setAvg5(this.repository.getAvg5());
+		dashboard.setStddev6(this.repository.getStdDev6());
 		dashboard.setNumberOfTasks(this.repository.getNumberOfTasks());
 		dashboard.setNumberOfPrivateTasks(this.repository.getNumberOfPrivateTasks());
 		dashboard.setNumberOfFinishedTasks(this.repository.getNumberOfFinishedTasks());
