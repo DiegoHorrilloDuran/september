@@ -1,10 +1,13 @@
-recordIndex,author,text,info,xxx1,xxx2,currency,amount,xxx4
-8,MariCarmen,Hola mundo,http://www.example.com,22/01/2020,01/09/2022 15:35,EUR,21.21,true
-9,Carlos,Adios Mundo,,22/01/2020,01/09/2022 15:35,EUR,21.21,true
-10,Maria,Hola mundo,http://www.example.com,22/01/2020,01/09/2022 15:35,EUR,21.21,true
-11,MariaMariaMariaMariaMaria,Hola mundo,http://www.example.com,22/01/2020,01/09/2022 15:35,EUR,21.21,true
-12,Manolo,HolasMundoHolasMundoHolasMundoHolasMundoHolasMundoHolasMundoHolasMundoHolasMundoHolasMundoHolasMundo,http://www.example.com,22/01/2020,01/09/2022 15:35,EUR,21.21,true
-13,Mario,Shout,,01/01/1900,01/09/2022 15:35,EUR,0.01,true
-14,Mario,Shout,,31/12/2099,01/09/2022 15:35,EUR,0.01,true
-15,Mario,Shout,,01/01/1900,01/09/2022 15:35,USD,0.01,true
-16,Mario,Shout,,01/01/1900,01/09/2022 15:35,USD,0.01,true
+recordIndex,author,text,info,xxx1,xxx2,currency,amount,amount2,xxx4
+5,Test1,Hola mundo,http://www.example.com,22/01/2020,2022/09/01 15:35,EUR,21.21,21.21,true
+6,Test2--------------------,Adios Mundo,,22/01/2020,2022/09/01 15:35,EUR,21.21,21.21,true
+7,Test4,H,http://www.example.com,22/01/2020,2022/09/01 15:35,EUR,21.21,21.21,true
+8,Test5,Hola mundooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo,http://www.example.com,22/01/2020,2022/09/01 15:35,EUR,21.21,21.21,true
+9,Test6,Hola mundo,http://www.example.com,01/01/1900,2022/09/01 15:35,EUR,21.21,21.21,true
+10,Test7,Shout,,31/12/2099,2022/09/01 15:35,EUR,21.21,21.21,true
+11,Test8,Shout,,22/01/2020,2022/09/01 15:35,EUR,21.21,21.21,true
+12,Test9,Shout,,22/01/2020,2022/09/01 15:35,USD,21.21,21.21,true
+13,Test10,Shout,,22/01/2020,2022/09/01 15:35,GBP,21.21,21.21,true
+14,Test11,Shout,,22/01/2020,2022/09/01 15:35,EUR,0.01,0.01,true
+15,Test12,Shout,,22/01/2020,2022/09/01 15:35,EUR,9999999999.99,"9,999,999,999.99",true
+16,Test13,Shout,,22/01/2020,2022/09/01 15:35,EUR,21.21,21.21,false

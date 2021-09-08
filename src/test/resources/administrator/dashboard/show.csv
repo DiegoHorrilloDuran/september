@@ -1,2 +1,2 @@
-recordIndex,numberOfPrivateTasks,numberOfPublicTasks,numberOfFinishedTasks,numberOfUnfinishedTasks,maxTaskExecutionPeriod,minTaskExecutionPeriod,avgTaskExecutionPeriods,stdDevTaskExecutionPeriods,maxTaskWorkload,minTaskWorkload,avgTaskWorkloads,stdDevTaskWorkloads
-0,3,15,9,9,5,0,2.44,1.54,9.00,2.00,6.70,2.30
+recordIndex,ratio1,ratio2,avg3,stddev4,avg5,stddev6,numberOfPrivateTasks,numberOfPublicTasks,numberOfFinishedTasks,numberOfUnfinishedTasks,maxTaskExecutionPeriod,minTaskExecutionPeriod,avgTaskExecutionPeriods,stdDevTaskExecutionPeriods,maxTaskWorkload,minTaskWorkload,avgTaskWorkloads,stdDevTaskWorkloads
+0,5/8,4/8,539.93,703.90,165.50,196.18,3,15,10,8,5,0,2.44,1.54,9.00,2.00,6.70,2.30

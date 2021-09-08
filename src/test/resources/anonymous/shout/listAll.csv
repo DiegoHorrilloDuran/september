@@ -1,4 +1,4 @@
-recordIndex,author,text,info
-1,Carlos Ruiz,Buenos días,
-2,Billie Eilish,Im Sad,http://www.example.org
-0,Antonio Bermejo,Tengo sueño,
+recordIndex,moment,author,text,info,xxx1,xxx2,xxx3,xxx4
+0,2021/08/30 02:10,Antonio Bermejo,Tengo sueño,,02/02/2022,2022/06/02 15:00,"EUR 1,750.50",false
+1,2021/08/30 12:20	c,Carlos Ruiz,Buenos días,,02/02/2022,2022/06/02 15:00,USD 500.80,false
+2,2021/08/30 15:55,Jane Doe,Im Sad,http://www.example.org,02/02/2022,2022/02/02 15:00,EUR 200.50,true

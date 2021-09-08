@@ -15,7 +15,7 @@ public class AnonymousShoutCreateTest extends AcmeWorkPlansTest {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/anonymous/shout/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
     @Order(13)
-    public void createPositive(final int recordIndex, final String author, final String text, final String info, final String xxx1, final String xxx2, final String currency, final String amount, final String xxx4) {
+    public void createPositive(final int recordIndex, final String author, final String text, final String info, final String xxx1, final String xxx2, final String currency, final String amount, final String amount2, final String xxx4) {
 		
 		super.clickOnMenu("Anonymous", "New shout");
 		
@@ -37,7 +37,7 @@ public class AnonymousShoutCreateTest extends AcmeWorkPlansTest {
 		super.checkColumnHasValue(recordIndex, 3, info);
 		super.checkColumnHasValue(recordIndex, 4, xxx1);
 		super.checkColumnHasValue(recordIndex, 5, xxx2);
-		super.checkColumnHasValue(recordIndex, 6, currency+" "+amount);
+		super.checkColumnHasValue(recordIndex, 6, currency+" "+amount2);
 		super.checkColumnHasValue(recordIndex, 7, xxx4);
 		
 	}
