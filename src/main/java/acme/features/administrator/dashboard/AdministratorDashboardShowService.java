@@ -8,6 +8,7 @@ import acme.framework.components.Request;
 import acme.framework.entities.Administrator;
 import acme.framework.entities.Dashboard;
 import acme.framework.services.AbstractShowService;
+import acme.framework.utilities.AcmeDuration;
 
 @Service
 public class AdministratorDashboardShowService implements AbstractShowService<Administrator, Dashboard> {
@@ -31,7 +32,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		final Integer pt = entity.numberOfPublicTasks();
 		final Integer ut = entity.numberOfUnfinishedTasks();
 		
-		request.unbind(entity, model,"ratio1","ratio2","avg3","stddev4","avg5","stddev6", "numberOfTasks", "numberOfPrivateTasks", "numberOfFinishedTasks","maxTaskExecutionPeriod","minTaskExecutionPeriod","avgTaskExecutionPeriods","stdDevTaskExecutionPeriods","maxTaskWorkload","minTaskWorkload","avgTaskWorkloads","stdDevTaskWorkloads");
+		request.unbind(entity, model,"ratio1","ratio2","avg3","stddev4","avg5","stddev6","avg6","stddev7", "numberOfTasks", "numberOfPrivateTasks", "numberOfFinishedTasks","maxTaskExecutionPeriod","minTaskExecutionPeriod","avgTaskExecutionPeriods","stdDevTaskExecutionPeriods","maxTaskWorkload","minTaskWorkload","avgTaskWorkloads","stdDevTaskWorkloads");
 		model.setAttribute("numberOfPublicTasks", pt);
 		model.setAttribute("numberOfUnfinishedTasks", ut);
 	}
@@ -49,6 +50,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		dashboard.setStddev4(this.repository.getStdDev4());
 		dashboard.setAvg5(this.repository.getAvg5());
 		dashboard.setStddev6(this.repository.getStdDev6());
+		dashboard.setAvg6(this.repository.getAvg6());
+		dashboard.setStddev7(this.repository.getStdDev7());
 		dashboard.setNumberOfTasks(this.repository.getNumberOfTasks());
 		dashboard.setNumberOfPrivateTasks(this.repository.getNumberOfPrivateTasks());
 		dashboard.setNumberOfFinishedTasks(this.repository.getNumberOfFinishedTasks());
@@ -56,10 +59,10 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		dashboard.setMinTaskExecutionPeriod(this.repository.getMinTaskExecutionPeriod());
 		dashboard.setAvgTaskExecutionPeriods(this.repository.getAvgTaskExecutionPeriods());
 		dashboard.setStdDevTaskExecutionPeriods(this.repository.getStdDevTaskExecutionPeriods());
-		dashboard.setMaxTaskWorkload(this.repository.getMaxTaskWorkload());
-		dashboard.setMinTaskWorkload(this.repository.getMinTaskWorkload());
-		dashboard.setAvgTaskWorkloads(this.repository.getAvgTaskWorkloads());
-		dashboard.setStdDevTaskWorkloads(this.repository.getStdDevTaskWorkloads());
+		dashboard.setMaxTaskWorkload(AcmeDuration.correctPeriod(this.repository.getMaxTaskWorkload()));
+		dashboard.setMinTaskWorkload(AcmeDuration.correctPeriod(this.repository.getMinTaskWorkload()));
+		dashboard.setAvgTaskWorkloads(AcmeDuration.correctPeriod(this.repository.getAvgTaskWorkloads()));
+		dashboard.setStdDevTaskWorkloads(AcmeDuration.correctPeriod(this.repository.getStdDevTaskWorkloads()));
 		
 		return dashboard;
 	}

@@ -18,6 +18,8 @@ public class Dashboard implements Serializable {
 	Double						stddev4;
 	Double						avg5;
 	Double						stddev6;
+	Double						avg6;
+	Double						stddev7;
 	Integer						numberOfTasks;
 	Integer						numberOfPrivateTasks;
 	Integer						numberOfFinishedTasks;

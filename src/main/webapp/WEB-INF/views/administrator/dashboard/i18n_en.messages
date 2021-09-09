@@ -8,12 +8,14 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-administrator.dashboard.form.label.ratio1 = Ratio of Shouts with Xxxxis flaggered as XXXB:
-administrator.dashboard.form.label.ratio2 = Ratio of Shouts whose Xxxxis has XXXX:
-administrator.dashboard.form.label.avg3 = Average of XXX grouped by EUR (amount):
-administrator.dashboard.form.label.stddev4 = Standard deviation of XXX grouped by EUR (amount):
-administrator.dashboard.form.label.avg5 = Average of XXX grouped by USD (amount):
-administrator.dashboard.form.label.stddev6 = Standard deviation of XXX grouped by USD (amount):
+administrator.dashboard.form.label.ratio1 = Ratio of Shouts with Xxxis flaggered as Important:
+administrator.dashboard.form.label.ratio2 = Ratio of Shouts whose Xxxis has budget 0:
+administrator.dashboard.form.label.avg3 = Average of Budgets grouped by EUR (amount):
+administrator.dashboard.form.label.stddev4 = Standard deviation of Budgets grouped by EUR (amount):
+administrator.dashboard.form.label.avg5 = Average of Budgets grouped by USD (amount):
+administrator.dashboard.form.label.stddev6 = Standard deviation of Budgets grouped by USD (amount):
+administrator.dashboard.form.label.avg6 = Average of Budgets grouped by GBP (amount):
+administrator.dashboard.form.label.stddev7 = Standard deviation of Budgets grouped by GBP (amount):
 
 administrator.dashboard.form.label.numberOfPrivateTasks = Number of private tasks: 
 administrator.dashboard.form.label.numberOfPublicTasks = Number of public tasks: 

@@ -8,12 +8,14 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-administrator.dashboard.form.label.ratio1 = Ratio de gritos con Xxxis marcado como XXXB:
-administrator.dashboard.form.label.ratio2 = Ratio de gritos cuyo Xxxis tiene XXXX:
-administrator.dashboard.form.label.avg3 = Media de XXX agrupada por EUR (cantidad):
-administrator.dashboard.form.label.stddev4 = Desviación típica de XXX agrupada por EUR (cantidad):
-administrator.dashboard.form.label.avg5 = Media de XXX agrupada por USD (cantidad):
-administrator.dashboard.form.label.stddev6 = Desviación típica de XXX agrupada por USD (cantidad):
+administrator.dashboard.form.label.ratio1 = Ratio de gritos con Xxxis marcado como Importante:
+administrator.dashboard.form.label.ratio2 = Ratio de gritos cuyo Xxxis tiene presupuesto 0:
+administrator.dashboard.form.label.avg3 = Media de presupuestos agrupada por EUR (cantidad):
+administrator.dashboard.form.label.stddev4 = Desviación típica de presupuestos agrupada por EUR (cantidad):
+administrator.dashboard.form.label.avg5 = Media de presupuestos agrupada por USD (cantidad):
+administrator.dashboard.form.label.stddev6 = Desviación típica de presupuestos agrupada por USD (cantidad):
+administrator.dashboard.form.label.avg6 = Media de presupuestos agrupada por GBP (cantidad):
+administrator.dashboard.form.label.stddev7 = Desviación típica de presupuestos agrupada por GBP (caantidad):
 
 administrator.dashboard.form.label.numberOfPrivateTasks = Número de tareas privadas:
 administrator.dashboard.form.label.numberOfPublicTasks = Número de tareas públicas: 

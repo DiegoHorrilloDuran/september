@@ -22,6 +22,8 @@
 	<acme:form-textbox code="administrator.dashboard.form.label.stddev4" path="stddev4" />
 	<acme:form-textbox code="administrator.dashboard.form.label.avg5" path="avg5" />
 	<acme:form-textbox code="administrator.dashboard.form.label.stddev6" path="stddev6" />
+	<acme:form-textbox code="administrator.dashboard.form.label.avg6" path="avg6" />
+	<acme:form-textbox code="administrator.dashboard.form.label.stddev7" path="stddev7" />
 	<acme:form-textbox code="administrator.dashboard.form.label.numberOfPrivateTasks" path="numberOfPrivateTasks" />
 	<acme:form-textbox code="administrator.dashboard.form.label.numberOfPublicTasks" path="numberOfPublicTasks"/>
 	<acme:form-textbox code="administrator.dashboard.form.label.numberOfFinishedTasks" path="numberOfFinishedTasks"/>

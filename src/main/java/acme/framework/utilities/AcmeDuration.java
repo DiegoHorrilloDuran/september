@@ -17,17 +17,17 @@ public class AcmeDuration {
 		 return AcmeDuration.doPeriod(periodMinutes);
 	 }
 	
-//	public static Double correctPeriod(final Double period) {
-//		Double res = period;
-//		if(res!=null) {
-//			final Double dec = res - res.intValue();
-//			if (dec >= .6) {
-//				res = res + 1 - .6;
-//			}
-//		}
-//
-//		return res;
-//	}
+	public static Double correctPeriod(final Double period) {
+		Double res = period;
+		if(res!=null) {
+			final Double dec = res - res.intValue();
+			if (dec >= .6) {
+				res = res + 1 - .6;
+			}
+		}
+
+		return res;
+	}
 	
 	public static Double doPeriod(final long period) {
 		final Double res;

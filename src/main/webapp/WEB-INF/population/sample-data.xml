@@ -67,7 +67,7 @@
 		<property name="xxx3">
 			<bean class="acme.framework.datatypes.Money">
 				<property name="amount" value="0.01" />
-				<property name="currency" value="EUR" />
+				<property name="currency" value="GBP" />
 			</bean>
 		</property>
 		<property name="xxx4" value="true" />
@@ -93,7 +93,7 @@
 		<property name="xxx3">
 			<bean class="acme.framework.datatypes.Money">
 				<property name="amount" value="1750.50" />
-				<property name="currency" value="EUR" />
+				<property name="currency" value="GBP" />
 			</bean>
 		</property>
 		<property name="xxx4" value="false" />

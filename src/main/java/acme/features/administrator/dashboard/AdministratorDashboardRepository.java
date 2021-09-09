@@ -15,7 +15,7 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select count(s) from Shout s where s.xxxis.xxx4 = true")
 	Integer getQuery1();
 	
-	@Query("select count(s) from Shout s where s.xxxis.xxx3.currency = 'EUR'")
+	@Query("select count(s) from Shout s where s.xxxis.xxx3.amount = 0")
 	Integer getQuery2();
 	
 	@Query("select avg(s.xxxis.xxx3.amount) from Shout s where s.xxxis.xxx3.currency = 'EUR'")
@@ -29,6 +29,12 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	
 	@Query("select stddev(s.xxxis.xxx3.amount) from Shout s where s.xxxis.xxx3.currency = 'USD'")
 	Double getStdDev6();
+	
+	@Query("select avg(s.xxxis.xxx3.amount) from Shout s where s.xxxis.xxx3.currency = 'GBP'")
+	Double getAvg6();
+	
+	@Query("select stddev(s.xxxis.xxx3.amount) from Shout s where s.xxxis.xxx3.currency = 'GBP'")
+	Double getStdDev7();
 	
 	@Query("select count(t) from Task t")
 	Integer getNumberOfTasks();
