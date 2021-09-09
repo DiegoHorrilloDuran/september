@@ -1,4 +1,4 @@
 recordIndex,author,text,info,xxx1,xxx2,xxx3,xxx4
-0,Antonio Bermejo,Tengo sueño,,02/02/2022,2022/06/02 15:00,"GBP 1,750.50",false
-1,Carlos Ruiz,Buenos días,,02/02/2022,2022/06/02 15:00,USD 500.80,false
-2,Jane Doe,Im Sad,http://www.example.org,02/02/2022,2022/02/02 15:00,EUR 200.50,true
+0,Antonio Bermejo,Tengo sueño,,05-121212,2022/06/02 15:00,"GBP 1,750.50",false
+1,Carlos Ruiz,Buenos días,,06-121212,2022/06/02 15:00,USD 500.80,false
+2,Jane Doe,Im Sad,http://www.example.org,01-121212,2022/02/02 15:00,EUR 200.50,true

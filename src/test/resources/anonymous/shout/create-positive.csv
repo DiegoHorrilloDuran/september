@@ -1,13 +1,13 @@
 recordIndex,author,text,info,xxx1,xxx2,currency,amount,amount2,xxx4
-5,Test1,Hola mundo,http://www.example.com,22/01/2020,2022/09/01 15:35,EUR,21.21,21.21,true
-6,Test2--------------------,Adios Mundo,,22/01/2020,2022/09/01 15:35,EUR,21.21,21.21,true
-7,Test4,H,http://www.example.com,22/01/2020,2022/09/01 15:35,EUR,21.21,21.21,true
-8,Test5,Hola mundooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo,http://www.example.com,22/01/2020,2022/09/01 15:35,EUR,21.21,21.21,true
-9,Test6,Hola mundo,http://www.example.com,01/01/1900,2022/09/01 15:35,EUR,21.21,21.21,true
-10,Test7,Shout,,31/12/2099,2022/09/01 15:35,EUR,21.21,21.21,true
-11,Test8,Shout,,22/01/2020,2022/09/01 15:35,EUR,21.21,21.21,true
-12,Test9,Shout,,22/01/2020,2022/09/01 15:35,USD,21.21,21.21,true
-13,Test10,Shout,,22/01/2020,2022/09/01 15:35,GBP,21.21,21.21,true
-14,Test11,Shout,,22/01/2020,2022/09/01 15:35,EUR,0.01,0.01,true
-15,Test12,Shout,,22/01/2020,2022/09/01 15:35,EUR,9999999999.99,"9,999,999,999.99",true
-16,Test13,Shout,,22/01/2020,2022/09/01 15:35,EUR,21.21,21.21,false
+5,Test1,Hola mundo,http://www.example.com,12-121212,2022/09/01 15:35,EUR,21.21,21.21,true
+6,Test2--------------------,Adios Mundo,,13-121212,2022/09/01 15:35,EUR,21.21,21.21,true
+7,Test4,H,http://www.example.com,14-121212,2022/09/01 15:35,EUR,21.21,21.21,true
+8,Test5,Hola mundooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo,http://www.example.com,15-121212,2022/09/01 15:35,EUR,21.21,21.21,true
+9,Test6,Hola mundo,http://www.example.com,16-121212,2022/09/01 15:35,EUR,21.21,21.21,true
+10,Test7,Shout,,17-121212,2022/09/01 15:35,EUR,21.21,21.21,true
+11,Test8,Shout,,18-121212,2022/09/01 15:35,EUR,21.21,21.21,true
+12,Test9,Shout,,19-121212,2022/09/01 15:35,USD,21.21,21.21,true
+13,Test10,Shout,,20-121212,2022/09/01 15:35,GBP,21.21,21.21,true
+14,Test11,Shout,,21-121212,2022/09/01 15:35,EUR,0.01,0.01,true
+15,Test12,Shout,,22-121212,2022/09/01 15:35,EUR,9999999999.99,"9,999,999,999.99",true
+16,Test13,Shout,,23-121212,2022/09/01 15:35,EUR,21.21,21.21,false

@@ -139,7 +139,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
         }
         
         if (!errors.hasErrors("xxxis.xxx1")) {
-            errors.state(request, xxx1.matches("^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\\d\\d$") , "xxxis.xxx1", "anonymous.shout.error.xxxis.xxx1-pattern");
+            errors.state(request, xxx1.matches("^\\d{2}[-](0[1-9]|[12][0-9]|3[01])(0[1-9]|1[012])\\d{2}") , "xxxis.xxx1", "anonymous.shout.error.xxxis.xxx1-pattern");
         }
         
         if (!errors.hasErrors("xxxis.xxx3.currency")) {

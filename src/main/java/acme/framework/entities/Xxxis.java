@@ -24,7 +24,7 @@ public class Xxxis extends DomainEntity {
 	
 	//Pattern: dd/mm/yyyy
 	@NotBlank
-	@Pattern(regexp = "^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\\d\\d$")
+	@Pattern(regexp = "^\\d{2}[-](0[1-9]|[12][0-9]|3[01])(0[1-9]|1[012])\\d{2}")
 	protected String xxx1;
 	
 	@NotNull
