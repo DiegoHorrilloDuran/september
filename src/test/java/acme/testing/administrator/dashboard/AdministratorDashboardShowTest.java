@@ -14,7 +14,7 @@ public class AdministratorDashboardShowTest extends AcmeWorkPlansTest {
 		@CsvFileSource(resources = "/administrator/dashboard/show.csv", encoding = "utf-8", numLinesToSkip = 1)
 		@Order(25)
 		public void show(final int recordIndex, final String ratio1,final String ratio2,final String avg3,
-			final String stddev4,final String avg5,final String stddev6, 
+			final String stddev4,final String avg5,final String stddev6,final String avg6,final String stddev7,
 			final String numberOfPrivateTasks, final String numberOfPublicTasks,
 			final String numberOfFinishedTasks, final String numberOfUnfinishedTasks, final String maxTaskExecutionPeriod, final String minTaskExecutionPeriod, 
 			final String avgTaskExecutionPeriods, final String stdDevTaskExecutionPeriods, final String maxTaskWorkload, 
@@ -29,6 +29,8 @@ public class AdministratorDashboardShowTest extends AcmeWorkPlansTest {
 			super.checkInputBoxHasValue("stddev4", stddev4);
 			super.checkInputBoxHasValue("avg5",avg5 );
 			super.checkInputBoxHasValue("stddev6", stddev6);
+			super.checkInputBoxHasValue("avg6",avg6 );
+			super.checkInputBoxHasValue("stddev7", stddev7);
 			super.checkInputBoxHasValue("numberOfPrivateTasks", numberOfPrivateTasks);
 			super.checkInputBoxHasValue("numberOfPublicTasks", numberOfPublicTasks);
 			super.checkInputBoxHasValue("numberOfFinishedTasks", numberOfFinishedTasks);
